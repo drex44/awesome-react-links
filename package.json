@@ -1,0 +1,45 @@
+{
+  "name": "awesome-react-links",
+  "version": "0.1.0-alpha.1",
+  "description": "Put a description here",
+  "main": "build/index.js",
+  "author": {
+    "name": "Dhanraj Acharya",
+    "email": "dhanrajacharya44@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drex44/awesome-react-links"
+  },
+  "license": "MIT",
+  "keywords": [
+    "animation",
+    "styled",
+    "react",
+    "links"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "sass ./src/links.scss ./src/index.css && webpack"
+  },
+  "peerDependencies": {
+    "react": "^15.5.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.5.1",
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.23.0",
+    "sass": "^1.13.2",
+    "node-sass": "^4.9.3",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-loader": "^3.0.0",
+    "webpack": "^2.7.0"
+  }
+}
