@@ -191,31 +191,56 @@ var TwoPartsLinks = exports.TwoPartsLinks = function (_React$Component2) {
   _createClass(TwoPartsLinks, [{
     key: "render",
     value: function render() {
-      return _react2.default.createElement(
-        "a",
-        { className: "TwoPartsLinks" },
-        _react2.default.createElement(
-          "span",
-          { className: "TwoPartsLinks_title" },
+      var response = void 0;
+      if (this.props.linkStyle === "highlight1") {
+        response = _react2.default.createElement(
+          "a",
+          { className: "TwoPartsLinks_highlight1", href: this.props.href },
           _react2.default.createElement(
             "span",
-            {
-              className: "TwoPartsLinks_first-word",
-              "data-hover": this.props.firstWord
-            },
-            this.props.firstWord
-          ),
-          " ",
-          _react2.default.createElement(
-            "span",
-            {
-              className: "TwoPartsLinks_second-word",
-              "data-hover": this.props.secondWord
-            },
-            this.props.secondWord
+            { className: "TwoPartsLinks_highlight1_title" },
+            _react2.default.createElement(
+              "span",
+              {
+                className: "TwoPartsLinks_highlight1_first-word",
+                "data-hover": this.props.firstPart
+              },
+              this.props.firstPart
+            ),
+            " ",
+            _react2.default.createElement(
+              "span",
+              {
+                className: "TwoPartsLinks_highlight1_second-word",
+                "data-hover": this.props.secondPart
+              },
+              this.props.secondPart
+            )
           )
-        )
-      );
+        );
+      } else if (this.props.linkStyle === "highlight2") {
+        response = _react2.default.createElement(
+          "a",
+          { "class": "TwoPartsLinks_highlight2 codepen", href: this.props.href },
+          _react2.default.createElement(
+            "div",
+            { "class": "social-cube" },
+            _react2.default.createElement(
+              "div",
+              { "class": "front" },
+              this.props.firstPart
+            ),
+            _react2.default.createElement(
+              "div",
+              { "class": "bottom" },
+              this.props.secondPart
+            )
+          )
+        );
+      } else {
+        response = null;
+      }
+      return response;
     }
   }]);
 
@@ -229,9 +254,12 @@ var TwoPartsLinks = exports.TwoPartsLinks = function (_React$Component2) {
 exports = module.exports = __webpack_require__(4)(false);
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Poppins:900i);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Dosis);", ""]);
 
 // module
-exports.push([module.i, "/*\n *  Highlight 1\n */\n.highlight1 {\n  z-index: 3;\n  font-weight: bold;\n  line-height: 1.4 !important;\n  padding: 10px 5px 2px 5px;\n  display: inline-block;\n  color: #343434 !important;\n  transition: color 250ms, text-shadow 250ms;\n  text-decoration: none !important;\n  background: none;\n  position: relative;\n  z-index: 0;\n}\n.highlight1::after {\n  position: absolute;\n  z-index: -1;\n  bottom: -5px;\n  left: 50%;\n  transform: translateX(-50%);\n  content: \"\";\n  width: 100%;\n  height: 3px;\n  background-color: #343434;\n  transition: all 250ms;\n}\n.highlight1:hover {\n  color: white !important;\n  text-shadow: 0px 1px 0px black;\n}\n.highlight1:hover::after {\n  height: 105%;\n  width: 105%;\n}\n\n/*\n *  Highlight 2\n */\n.highlight2 {\n  color: rgba(0, 0, 255, 0.8);\n  text-decoration: none;\n  position: relative;\n  padding: 0 0 0.5rem;\n}\n.highlight2::after {\n  content: \"\";\n  position: absolute;\n  left: 50%;\n  bottom: 5px;\n  transform: translateX(-100%) scaleX(0);\n  width: 100%;\n  height: 3px;\n  background-color: rgba(0, 0, 51, 0.8);\n  transition: transform 250ms;\n}\n.highlight2:hover {\n  color: rgba(0, 0, 51, 0.8);\n}\n.highlight2:hover::after {\n  transform: translateX(-50%) scaleX(1);\n}\n.highlight2:visited {\n  color: rgba(0, 0, 179, 0.8);\n}\n.social-media-list .highlight2:hover {\n  text-decoration: none;\n}\n\n/*\n *  Highlight 3\n */\n.highlight3 {\n  box-shadow: inset 0 0 0 4px #58afd1;\n  color: #58afd1;\n  transition: color 0.25s 0.0833333333s;\n  position: relative;\n  background: none;\n  border: none;\n  cursor: pointer;\n  line-height: 1.5;\n  font: 700 1.2rem \"Roboto Slab\", sans-serif;\n  padding: 1em 2em;\n  letter-spacing: 0.05rem;\n}\n.highlight3::before, .highlight3::after {\n  border: 0 solid transparent;\n  box-sizing: border-box;\n  content: \"\";\n  pointer-events: none;\n  position: absolute;\n  width: 0;\n  height: 0;\n  bottom: 0;\n  right: 0;\n}\n.highlight3::before {\n  border-bottom-width: 4px;\n  border-left-width: 4px;\n}\n.highlight3::after {\n  border-top-width: 4px;\n  border-right-width: 4px;\n}\n.highlight3:hover {\n  color: #256a85;\n}\n.highlight3:hover::before, .highlight3:hover::after {\n  border-color: #256a85;\n  transition: border-color 0s, width 0.25s, height 0.25s;\n  width: 100%;\n  height: 100%;\n}\n.highlight3:hover::before {\n  transition-delay: 0s, 0s, 0.25s;\n}\n.highlight3:hover::after {\n  transition-delay: 0s, 0.25s, 0s;\n}\n.highlight3:focus {\n  outline: 2px dotted #55d7dc;\n}\n\n/*\n *  Highlight 4\n */\n.highlight4 {\n  padding: 10px 45px;\n  text-decoration: none;\n  font-family: \"Poppins\", sans-serif;\n  color: white;\n  background: #6225e6;\n  transition: 1s;\n  box-shadow: 6px 6px 0 black;\n  transform: skewX(-15deg);\n}\n.highlight4:focus {\n  outline: none;\n}\n.highlight4:hover {\n  transition: 0.5s;\n  padding: 14px 47px;\n  box-shadow: 10px 10px 0 #fbc638;\n}\n\n/*\n * TwoPartsLinks\n */\n.TwoPartsLinks {\n  padding: 10px;\n}\n.TwoPartsLinks:hover .TwoPartsLinks_first-word, .TwoPartsLinks:focus .TwoPartsLinks_first-word {\n  transform: translate3d(0, -105%, 0);\n}\n.TwoPartsLinks:hover .TwoPartsLinks_second-word, .TwoPartsLinks:focus .TwoPartsLinks_second-word {\n  transform: translate3d(0, 105%, 0);\n}\n\n.TwoPartsLinks_title {\n  display: inline-block;\n  overflow: hidden;\n}\n\n.TwoPartsLinks_first-word,\n.TwoPartsLinks_second-word {\n  display: inline-block;\n  position: relative;\n  transition: transform 0.3s;\n}\n.TwoPartsLinks_first-word::before,\n.TwoPartsLinks_second-word::before {\n  position: absolute;\n  content: attr(data-hover);\n}\n\n.TwoPartsLinks_first-word {\n  color: #077036;\n}\n.TwoPartsLinks_first-word::before {\n  top: 105%;\n  color: #626262;\n}\n\n.TwoPartsLinks_second-word {\n  color: #626262;\n}\n.TwoPartsLinks_second-word::before {\n  bottom: 105%;\n  color: #077036;\n}\n", ""]);
+exports.push([module.i, "/*\n *  Highlight 1\n */\n.highlight1 {\n  z-index: 3;\n  font-weight: bold;\n  line-height: 1.4 !important;\n  padding: 10px 5px 2px 5px;\n  display: inline-block;\n  color: #343434 !important;\n  transition: color 250ms, text-shadow 250ms;\n  text-decoration: none !important;\n  background: none;\n  position: relative;\n  z-index: 0;\n}\n.highlight1::after {\n  position: absolute;\n  z-index: -1;\n  bottom: -5px;\n  left: 50%;\n  transform: translateX(-50%);\n  content: \"\";\n  width: 100%;\n  height: 3px;\n  background-color: #343434;\n  transition: all 250ms;\n}\n.highlight1:hover {\n  color: white !important;\n  text-shadow: 0px 1px 0px black;\n}\n.highlight1:hover::after {\n  height: 105%;\n  width: 105%;\n}\n\n/*\n *  Highlight 2\n */\n.highlight2 {\n  color: #343434;\n  text-decoration: none;\n  position: relative;\n  padding: 0 0 0.5rem;\n}\n.highlight2::after {\n  content: \"\";\n  position: absolute;\n  left: 50%;\n  bottom: 5px;\n  transform: translateX(-100%) scaleX(0);\n  width: 100%;\n  height: 3px;\n  background-color: black;\n  transition: transform 250ms;\n}\n.highlight2:hover {\n  color: black;\n}\n.highlight2:hover::after {\n  transform: translateX(-50%) scaleX(1);\n}\n.highlight2:visited {\n  color: #0e0e0e;\n}\n.social-media-list .highlight2:hover {\n  text-decoration: none;\n}\n\n/*\n *  Highlight 3\n */\n.highlight3 {\n  box-shadow: inset 0 0 0 4px #58afd1;\n  color: #58afd1;\n  transition: color 0.25s 0.0833333333s;\n  position: relative;\n  background: none;\n  border: none;\n  cursor: pointer;\n  line-height: 1.5;\n  font: 700 1.2rem \"Roboto Slab\", sans-serif;\n  padding: 1em 2em;\n  letter-spacing: 0.05rem;\n}\n.highlight3::before, .highlight3::after {\n  border: 0 solid transparent;\n  box-sizing: border-box;\n  content: \"\";\n  pointer-events: none;\n  position: absolute;\n  width: 0;\n  height: 0;\n  bottom: 0;\n  right: 0;\n}\n.highlight3::before {\n  border-bottom-width: 4px;\n  border-left-width: 4px;\n}\n.highlight3::after {\n  border-top-width: 4px;\n  border-right-width: 4px;\n}\n.highlight3:hover {\n  color: #256a85;\n}\n.highlight3:hover::before, .highlight3:hover::after {\n  border-color: #256a85;\n  transition: border-color 0s, width 0.25s, height 0.25s;\n  width: 100%;\n  height: 100%;\n}\n.highlight3:hover::before {\n  transition-delay: 0s, 0s, 0.25s;\n}\n.highlight3:hover::after {\n  transition-delay: 0s, 0.25s, 0s;\n}\n.highlight3:focus {\n  outline: 2px dotted #55d7dc;\n}\n\n/*\n *  Highlight 4\n */\n.highlight4 {\n  padding: 10px 45px;\n  text-decoration: none;\n  font-family: \"Poppins\", sans-serif;\n  color: white;\n  background: #6225e6;\n  transition: 1s;\n  box-shadow: 6px 6px 0 black;\n  transform: skewX(-15deg);\n}\n.highlight4:focus {\n  outline: none;\n}\n.highlight4:hover {\n  transition: 0.5s;\n  padding: 14px 47px;\n  box-shadow: 10px 10px 0 #fbc638;\n}\n\n/*\n *  Highlight 5\n */\n.highlight5 {\n  font-family: \"Source Sans Pro\", sans-serif;\n  color: #ff0072;\n  text-decoration: none;\n  -webkit-transition: 0.3s all ease;\n  transition: 0.3s ease all;\n}\n.highlight5:hover {\n  color: #fff;\n}\n.highlight5:focus {\n  color: #fff;\n}\n\n.highlight5 {\n  font-size: 18px;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n  display: inline-block;\n  text-align: center;\n  width: 270px;\n  font-weight: bold;\n  padding: 14px 0px;\n  border: 3px solid #ff0072;\n  border-radius: 2px;\n  position: relative;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);\n  z-index: 2;\n}\n.highlight5:before {\n  -webkit-transition: 0.5s all ease;\n  transition: 0.5s all ease;\n  position: absolute;\n  top: 0;\n  left: 50%;\n  right: 50%;\n  bottom: 0;\n  opacity: 0;\n  content: \"\";\n  background-color: #ff0072;\n  z-index: -1;\n}\n.highlight5:hover:before {\n  -webkit-transition: 0.5s all ease;\n  transition: 0.5s all ease;\n  left: 0;\n  right: 0;\n  opacity: 1;\n}\n.highlight5:focus:before {\n  -webkit-transition: 0.5s all ease;\n  transition: 0.5s all ease;\n  left: 0;\n  right: 0;\n  opacity: 1;\n}\n\n/*\n *  Highlight 6\n */\n.highlight6 {\n  font-family: \"Patrick Hand SC\", cursive;\n  background: transparent;\n  padding: 1rem;\n  transition: all 0.5s ease;\n  color: #41403e;\n  letter-spacing: 1px;\n  outline: none;\n  box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);\n  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;\n}\n.highlight6:hover {\n  box-shadow: 2px 8px 4px -6px rgba(0, 0, 0, 0.5);\n}\n.highlight6.lined.thick {\n  border: solid 7px #41403e;\n}\n.highlight6.dotted.thick {\n  border: dotted 5px #41403e;\n}\n.highlight6.dashed.thick {\n  border: dashed 5px #41403e;\n}\n.highlight6.lined.thin {\n  border: solid 2px #41403e;\n}\n.highlight6.dotted.thin {\n  border: dotted 2px #41403e;\n}\n.highlight6.dashed.thin {\n  border: dashed 2px #41403e;\n}\n\n/*\n * TwoPartsLinks_highlight2\n */\n.TwoPartsLinks_highlight2 {\n  position: relative;\n  display: inline-block;\n  width: 164px;\n  height: 36px;\n  perspective: 300px;\n  font-size: 24px;\n  margin: 8px;\n}\n.TwoPartsLinks_highlight2 .social-cube {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  transform-style: preserve-3d;\n  transition: all 0.333s;\n  transform: translateZ(-18px);\n}\n.TwoPartsLinks_highlight2 .social-cube .front,\n.TwoPartsLinks_highlight2 .social-cube .bottom {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  color: #fff;\n  transition: background 0.333s;\n}\n.TwoPartsLinks_highlight2 .social-cube .front {\n  transform: rotateX(0deg) translateZ(18px);\n}\n.TwoPartsLinks_highlight2 .social-cube .bottom {\n  transform: rotateX(-90deg) translateZ(18px);\n}\n.TwoPartsLinks_highlight2:hover .social-cube {\n  transform: translateZ(-18px) rotateX(90deg);\n}\n\n.TwoPartsLinks_highlight2.twitter {\n  font-family: \"Dosis\";\n}\n.TwoPartsLinks_highlight2.twitter .social-cube .front,\n.TwoPartsLinks_highlight2.twitter .social-cube .back {\n  background: #4099ff;\n}\n.TwoPartsLinks_highlight2.twitter .social-cube .bottom {\n  background: #0d7eff;\n}\n.TwoPartsLinks_highlight2.twitter:hover .social-cube .bottom {\n  background: #4099ff;\n}\n.TwoPartsLinks_highlight2.twitter:hover .social-cube .front {\n  background: #73b4ff;\n}\n.TwoPartsLinks_highlight2.facebook {\n  font-family: \"Dosis\";\n}\n.TwoPartsLinks_highlight2.facebook .social-cube .front,\n.TwoPartsLinks_highlight2.facebook .social-cube .back {\n  background: #3b5998;\n}\n.TwoPartsLinks_highlight2.facebook .social-cube .bottom {\n  background: #2d4373;\n}\n.TwoPartsLinks_highlight2.facebook:hover .social-cube .bottom {\n  background: #3b5998;\n}\n.TwoPartsLinks_highlight2.facebook:hover .social-cube .front {\n  background: #4c70ba;\n}\n.TwoPartsLinks_highlight2.youtube {\n  font-family: \"Dosis\";\n}\n.TwoPartsLinks_highlight2.youtube .social-cube .front,\n.TwoPartsLinks_highlight2.youtube .social-cube .back {\n  background: #cc181e;\n}\n.TwoPartsLinks_highlight2.youtube .social-cube .bottom {\n  background: #9e1317;\n}\n.TwoPartsLinks_highlight2.youtube:hover .social-cube .bottom {\n  background: #cc181e;\n}\n.TwoPartsLinks_highlight2.youtube:hover .social-cube .front {\n  background: #e73036;\n}\n.TwoPartsLinks_highlight2.github {\n  font-family: \"Dosis\";\n}\n.TwoPartsLinks_highlight2.github .social-cube .front,\n.TwoPartsLinks_highlight2.github .social-cube .back {\n  background: #767676;\n}\n.TwoPartsLinks_highlight2.github .social-cube .bottom {\n  background: #5d5d5d;\n}\n.TwoPartsLinks_highlight2.github:hover .social-cube .bottom {\n  background: #767676;\n}\n.TwoPartsLinks_highlight2.github:hover .social-cube .front {\n  background: #909090;\n}\n.TwoPartsLinks_highlight2.dribbble {\n  font-family: \"Dosis\";\n}\n.TwoPartsLinks_highlight2.dribbble .social-cube .front,\n.TwoPartsLinks_highlight2.dribbble .social-cube .back {\n  background: #ea4c89;\n}\n.TwoPartsLinks_highlight2.dribbble .social-cube .bottom {\n  background: #e51e6b;\n}\n.TwoPartsLinks_highlight2.dribbble:hover .social-cube .bottom {\n  background: #ea4c89;\n}\n.TwoPartsLinks_highlight2.dribbble:hover .social-cube .front {\n  background: #ef7aa7;\n}\n.TwoPartsLinks_highlight2.codepen {\n  font-family: \"Dosis\";\n}\n.TwoPartsLinks_highlight2.codepen .social-cube .front,\n.TwoPartsLinks_highlight2.codepen .social-cube .back {\n  background: #191919;\n}\n.TwoPartsLinks_highlight2.codepen .social-cube .bottom {\n  background: black;\n}\n.TwoPartsLinks_highlight2.codepen:hover .social-cube .bottom {\n  background: #191919;\n}\n.TwoPartsLinks_highlight2.codepen:hover .social-cube .front {\n  background: #333333;\n}\n\n/*\n *  Highlight x1\n */\n.btn-wrapper {\n  width: 290px;\n  height: 110px;\n}\n.btn-wrapper:hover .btn-inner {\n  top: -4px;\n  transform: scale(1, 1);\n  cursor: pointer;\n}\n.btn-wrapper__container {\n  border-bottom: 2px solid #15b5e2;\n  position: absolute;\n  width: 100%;\n  height: 80px;\n}\n.btn-wrapper__container:before, .btn-wrapper__container:after {\n  border-bottom: 2px solid #15b5e2;\n  width: 96%;\n  left: 2%;\n  bottom: -8px;\n  content: \"\";\n  position: absolute;\n}\n.btn-wrapper__container:after {\n  width: 92%;\n  left: 4%;\n  bottom: -14px;\n}\n.btn-wrapper__container .btn-inner {\n  width: 104.2%;\n  height: 100%;\n  position: absolute;\n  top: 20px;\n  left: -2.1%;\n  border: 2px solid #15b5e2;\n  box-sizing: border-box;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-family: \"Source Code Pro\", monospace;\n  letter-spacing: 1px;\n  text-transform: uppercase;\n  font-size: 18px;\n  background: #10131c;\n  transform: scale(0.96, 0.96);\n  transition: all 0.3s;\n  z-index: 4;\n}\n.btn-wrapper__container .btn-inner .highlightx1 {\n  text-decoration: none;\n  color: #15b5e2;\n}\n\n/*\n * TwoPartsLinks_highlight1\n */\n.TwoPartsLinks_highlight1 {\n  padding: 10px;\n}\n.TwoPartsLinks_highlight1:hover .TwoPartsLinks_highlight1_first-word, .TwoPartsLinks_highlight1:focus .TwoPartsLinks_highlight1_first-word {\n  transform: translate3d(0, -105%, 0);\n}\n.TwoPartsLinks_highlight1:hover .TwoPartsLinks_highlight1_second-word, .TwoPartsLinks_highlight1:focus .TwoPartsLinks_highlight1_second-word {\n  transform: translate3d(0, 105%, 0);\n}\n\n.TwoPartsLinks_highlight1_title {\n  display: inline-block;\n  overflow: hidden;\n}\n\n.TwoPartsLinks_highlight1_first-word,\n.TwoPartsLinks_highlight1_second-word {\n  display: inline-block;\n  position: relative;\n  transition: transform 0.3s;\n}\n.TwoPartsLinks_highlight1_first-word::before,\n.TwoPartsLinks_highlight1_second-word::before {\n  position: absolute;\n  content: attr(data-hover);\n}\n\n.TwoPartsLinks_highlight1_first-word {\n  color: #077036;\n}\n.TwoPartsLinks_highlight1_first-word::before {\n  top: 105%;\n  color: #626262;\n}\n\n.TwoPartsLinks_highlight1_second-word {\n  color: #626262;\n}\n.TwoPartsLinks_highlight1_second-word::before {\n  bottom: 105%;\n  color: #077036;\n}\n", ""]);
 
 // exports
 

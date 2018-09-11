@@ -13,23 +13,38 @@ export default class AwesomeLinks extends React.Component {
 
 export class TwoPartsLinks extends React.Component {
   render() {
-    return (
-      <a className="TwoPartsLinks">
-        <span className="TwoPartsLinks_title">
-          <span
-            className="TwoPartsLinks_first-word"
-            data-hover={this.props.firstWord}
-          >
-            {this.props.firstWord}
-          </span>{" "}
-          <span
-            className="TwoPartsLinks_second-word"
-            data-hover={this.props.secondWord}
-          >
-            {this.props.secondWord}
+    let response;
+    if (this.props.linkStyle === "highlight1") {
+      response = (
+        <a className="TwoPartsLinks_highlight1" href={this.props.href}>
+          <span className="TwoPartsLinks_highlight1_title">
+            <span
+              className="TwoPartsLinks_highlight1_first-word"
+              data-hover={this.props.firstPart}
+            >
+              {this.props.firstPart}
+            </span>{" "}
+            <span
+              className="TwoPartsLinks_highlight1_second-word"
+              data-hover={this.props.secondPart}
+            >
+              {this.props.secondPart}
+            </span>
           </span>
-        </span>
-      </a>
-    );
+        </a>
+      );
+    } else if (this.props.linkStyle === "highlight2") {
+      response = (
+        <a class="TwoPartsLinks_highlight2 codepen" href={this.props.href}>
+          <div class="social-cube">
+            <div class="front">{this.props.firstPart}</div>
+            <div class="bottom">{this.props.secondPart}</div>
+          </div>
+        </a>
+      );
+    } else {
+      response = null;
+    }
+    return response;
   }
 }

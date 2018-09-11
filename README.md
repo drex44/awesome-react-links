@@ -24,12 +24,11 @@ import AwesomeLinks from "awesome-react-links";
 </AwesomeLinks>;
 ```
 
-check out the demo for more!
+check out the [demo](https://awesome-react-links.surge.sh) for all styles and how to use them!
 
 # All styles
 
-- highlight1
-- highlight2
+[Styles](Styles.md)
 
 # Contributions
 

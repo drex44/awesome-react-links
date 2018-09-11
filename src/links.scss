@@ -2,7 +2,7 @@
  *  Highlight 1
  */
 
-$brand-color: rgba(0, 0, 255, 0.8) !default;
+$brand-color: #343434 !default;
 $brand-color-dark: darken($brand-color, 40%) !default;
 
 .highlight1 {
@@ -186,34 +186,316 @@ $brand-color-dark: darken($brand-color, 40%) !default;
 }
 
 /*
- * TwoPartsLinks
+ *  Highlight 5
+ */
+
+@import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:700";
+
+$font: "Source Sans Pro", sans-serif;
+$primary: #ff0072;
+$second: #644cad;
+$third: #4426a8;
+
+.highlight5 {
+  font-family: $font;
+  color: $primary;
+  text-decoration: none;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s ease all;
+  &:hover {
+    color: #fff;
+  }
+  &:focus {
+    color: #fff;
+  }
+}
+
+.highlight5 {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  width: 270px;
+  font-weight: bold;
+  padding: 14px 0px;
+  border: 3px solid $primary;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  &:before {
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: $primary;
+    z-index: -1;
+  }
+  &:hover {
+    &:before {
+      -webkit-transition: 0.5s all ease;
+      transition: 0.5s all ease;
+      left: 0;
+      right: 0;
+      opacity: 1;
+    }
+  }
+  &:focus {
+    &:before {
+      -webkit-transition: 0.5s all ease;
+      transition: 0.5s all ease;
+      left: 0;
+      right: 0;
+      opacity: 1;
+    }
+  }
+}
+
+/*
+ *  Highlight 6
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+
+.highlight6 {
+  font-family: "Patrick Hand SC", cursive;
+  background: transparent;
+  padding: 1rem;
+  transition: all 0.5s ease;
+  color: #41403e;
+  letter-spacing: 1px;
+  outline: none;
+  box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  &:hover {
+    box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, 0.5);
+  }
+  &.lined.thick {
+    border: solid 7px #41403e;
+  }
+  &.dotted.thick {
+    border: dotted 5px #41403e;
+  }
+  &.dashed.thick {
+    border: dashed 5px #41403e;
+  }
+  &.lined.thin {
+    border: solid 2px #41403e;
+  }
+  &.dotted.thin {
+    border: dotted 2px #41403e;
+  }
+  &.dashed.thin {
+    border: dashed 2px #41403e;
+  }
+}
+
+/*
+ * TwoPartsLinks_highlight2
+ */
+
+@import url("https://fonts.googleapis.com/css?family=Dosis");
+
+// Mixin for easier colors
+@mixin TwoPartsLinks_highlight2($color) {
+  font-family: "Dosis";
+  .social-cube {
+    .front,
+    .back {
+      background: $color;
+    }
+    .bottom {
+      background: darken($color, 10%);
+    }
+  }
+  &:hover .social-cube {
+    .bottom {
+      background: $color;
+    }
+    .front {
+      background: lighten($color, 10%);
+    }
+  }
+}
+
+// Social container styles
+.TwoPartsLinks_highlight2 {
+  position: relative;
+  display: inline-block;
+  width: 164px;
+  height: 36px;
+  perspective: 300px;
+  font-size: 24px;
+  margin: 8px;
+  .social-cube {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.333s;
+    transform: translateZ(-18px);
+    .front,
+    .bottom {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      transition: background 0.333s;
+    }
+    .front {
+      transform: rotateX(0deg) translateZ(18px);
+    }
+    .bottom {
+      transform: rotateX(-90deg) translateZ(18px);
+    }
+  }
+
+  &:hover .social-cube {
+    transform: translateZ(-18px) rotateX(90deg);
+  }
+}
+
+// Custom colors
+$twitter-blue: #4099ff;
+$facebook-blue: #3b5998;
+$youtube-red: #cc181e;
+$github-gray: #767676;
+$dribbble-pink: #ea4c89;
+$codepen-gray: #191919;
+
+.TwoPartsLinks_highlight2 {
+  &.twitter {
+    @include TwoPartsLinks_highlight2($twitter-blue);
+  }
+  &.facebook {
+    @include TwoPartsLinks_highlight2($facebook-blue);
+  }
+  &.youtube {
+    @include TwoPartsLinks_highlight2($youtube-red);
+  }
+  &.github {
+    @include TwoPartsLinks_highlight2($github-gray);
+  }
+  &.dribbble {
+    @include TwoPartsLinks_highlight2($dribbble-pink);
+  }
+  &.codepen {
+    @include TwoPartsLinks_highlight2($codepen-gray);
+  }
+}
+
+/*
+ *  Highlight x1
+ */
+
+// Variables
+$blue: #15b5e2;
+$btn-bg: #10131c;
+
+.btn-wrapper {
+  width: 290px;
+  height: 110px;
+
+  &:hover {
+    .btn-inner {
+      top: -4px;
+      transform: scale(1, 1);
+      cursor: pointer;
+    }
+  }
+
+  &__container {
+    border-bottom: 2px solid $blue;
+    position: absolute;
+    width: 100%;
+    height: 80px;
+
+    &:before,
+    &:after {
+      border-bottom: 2px solid $blue;
+      width: 96%;
+      left: 2%;
+      bottom: -8px;
+      content: "";
+      position: absolute;
+    }
+
+    &:after {
+      width: 92%;
+      left: 4%;
+      bottom: -14px;
+    }
+
+    .btn-inner {
+      width: 104.2%;
+      height: 100%;
+      position: absolute;
+      top: 20px;
+      left: -2.1%;
+      border: 2px solid $blue;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Source Code Pro", monospace;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 18px;
+      background: $btn-bg;
+      transform: scale(0.96, 0.96);
+      transition: all 0.3s;
+      z-index: 4;
+
+      .highlightx1 {
+        text-decoration: none;
+        color: $blue;
+      }
+    }
+  }
+}
+
+/*
+ * TwoPartsLinks_highlight1
  */
 
 $color-primary: #077036;
 $color-secondary: #626262;
 $color-border: #ccd7d7;
 
-.TwoPartsLinks {
+.TwoPartsLinks_highlight1 {
   padding: 10px;
   &:hover,
   &:focus {
-    .TwoPartsLinks_first-word {
+    .TwoPartsLinks_highlight1_first-word {
       transform: translate3d(0, -105%, 0);
     }
 
-    .TwoPartsLinks_second-word {
+    .TwoPartsLinks_highlight1_second-word {
       transform: translate3d(0, 105%, 0);
     }
   }
 }
 
-.TwoPartsLinks_title {
+.TwoPartsLinks_highlight1_title {
   display: inline-block;
   overflow: hidden;
 }
 
-.TwoPartsLinks_first-word,
-.TwoPartsLinks_second-word {
+.TwoPartsLinks_highlight1_first-word,
+.TwoPartsLinks_highlight1_second-word {
   display: inline-block;
   position: relative;
   transition: transform 0.3s;
@@ -224,7 +506,7 @@ $color-border: #ccd7d7;
   }
 }
 
-.TwoPartsLinks_first-word {
+.TwoPartsLinks_highlight1_first-word {
   color: $color-primary;
 
   &::before {
@@ -233,7 +515,7 @@ $color-border: #ccd7d7;
   }
 }
 
-.TwoPartsLinks_second-word {
+.TwoPartsLinks_highlight1_second-word {
   color: $color-secondary;
 
   &::before {
