@@ -1,4 +1,4 @@
-# awesome-react-links
+# Awesome React Links ![version-0.1.x](https://img.shields.io/badge/version-0.1.0.alpha.3-yellow.svg) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
 
 > This is still minor version and is in development. current version is not performance efficient.
 
@@ -26,7 +26,7 @@ import AwesomeLinks from "awesome-react-links";
 
 check out the [demo](https://awesome-react-links.surge.sh) for all styles and how to use them!
 
-# All styles
+## All styles
 
 [Styles](Styles.md)
 
@@ -34,5 +34,6 @@ check out the [demo](https://awesome-react-links.surge.sh) for all styles and ho
 
 This is my first published package in npm so if you have an improvement or suggestion,
 
-- Mail me the the suggestions
-- create a pull request! :)
+- Raise an issue and submit on github.
+- Look in the projects in github to get the ideas on ways to contribute.
+- Create a pull request! :)
