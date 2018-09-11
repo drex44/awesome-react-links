@@ -15,7 +15,8 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["env"]
+            presets: ["env"],
+            plugins: ["transform-class-properties"]
           }
         }
       },
@@ -23,7 +24,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           "style-loader", // creates style nodes from JS strings
-          "css-loader", // translates CSS into CommonJS
+          "css-loader" // translates CSS into CommonJS
         ]
       }
     ]

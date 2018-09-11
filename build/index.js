@@ -133,6 +133,7 @@ module.exports = require("react");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.TwoPartsLinks = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -166,11 +167,9 @@ var AwesomeLinks = function (_React$Component) {
 
       var children = this.props.children;
 
-
       var childrenWithProps = _react2.default.Children.map(children, function (child) {
         return _react2.default.cloneElement(child, { className: _this2.props.linkStyle });
       });
-
       return childrenWithProps;
     }
   }]);
@@ -180,16 +179,59 @@ var AwesomeLinks = function (_React$Component) {
 
 exports.default = AwesomeLinks;
 
+var TwoPartsLinks = exports.TwoPartsLinks = function (_React$Component2) {
+  _inherits(TwoPartsLinks, _React$Component2);
+
+  function TwoPartsLinks() {
+    _classCallCheck(this, TwoPartsLinks);
+
+    return _possibleConstructorReturn(this, (TwoPartsLinks.__proto__ || Object.getPrototypeOf(TwoPartsLinks)).apply(this, arguments));
+  }
+
+  _createClass(TwoPartsLinks, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "a",
+        { className: "TwoPartsLinks" },
+        _react2.default.createElement(
+          "span",
+          { className: "TwoPartsLinks_title" },
+          _react2.default.createElement(
+            "span",
+            {
+              className: "TwoPartsLinks_first-word",
+              "data-hover": this.props.firstWord
+            },
+            this.props.firstWord
+          ),
+          " ",
+          _react2.default.createElement(
+            "span",
+            {
+              className: "TwoPartsLinks_second-word",
+              "data-hover": this.props.secondWord
+            },
+            this.props.secondWord
+          )
+        )
+      );
+    }
+  }]);
+
+  return TwoPartsLinks;
+}(_react2.default.Component);
+
 /***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(false);
 // imports
-
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Poppins:900i);", ""]);
 
 // module
-exports.push([module.i, ".highlight1 {\n  z-index: 3;\n  font-weight: bold;\n  line-height: 1.4 !important;\n  padding: 10px 5px 2px 5px;\n  display: inline-block;\n  color: #343434 !important;\n  transition: color 250ms, text-shadow 250ms;\n  text-decoration: none !important;\n  background: none;\n  position: relative;\n  z-index: 0;\n}\n.highlight1::after {\n  position: absolute;\n  z-index: -1;\n  bottom: -5px;\n  left: 50%;\n  transform: translateX(-50%);\n  content: \"\";\n  width: 100%;\n  height: 3px;\n  background-color: #343434;\n  transition: all 250ms;\n}\n.highlight1:hover {\n  color: white !important;\n  text-shadow: 0px 1px 0px black;\n}\n.highlight1:hover::after {\n  height: 105%;\n  width: 105%;\n}\n\n.highlight2 {\n  color: rgba(0, 0, 255, 0.8);\n  text-decoration: none;\n  position: relative;\n  padding: 0 0 0.5rem;\n}\n.highlight2::after {\n  content: \"\";\n  position: absolute;\n  left: 50%;\n  bottom: 5px;\n  transform: translateX(-100%) scaleX(0);\n  width: 100%;\n  height: 3px;\n  background-color: rgba(0, 0, 51, 0.8);\n  transition: transform 250ms;\n}\n.highlight2:hover {\n  color: rgba(0, 0, 51, 0.8);\n}\n.highlight2:hover::after {\n  transform: translateX(-50%) scaleX(1);\n}\n.highlight2:visited {\n  color: rgba(0, 0, 179, 0.8);\n}\n.social-media-list .highlight2:hover {\n  text-decoration: none;\n}\n", ""]);
+exports.push([module.i, "/*\n *  Highlight 1\n */\n.highlight1 {\n  z-index: 3;\n  font-weight: bold;\n  line-height: 1.4 !important;\n  padding: 10px 5px 2px 5px;\n  display: inline-block;\n  color: #343434 !important;\n  transition: color 250ms, text-shadow 250ms;\n  text-decoration: none !important;\n  background: none;\n  position: relative;\n  z-index: 0;\n}\n.highlight1::after {\n  position: absolute;\n  z-index: -1;\n  bottom: -5px;\n  left: 50%;\n  transform: translateX(-50%);\n  content: \"\";\n  width: 100%;\n  height: 3px;\n  background-color: #343434;\n  transition: all 250ms;\n}\n.highlight1:hover {\n  color: white !important;\n  text-shadow: 0px 1px 0px black;\n}\n.highlight1:hover::after {\n  height: 105%;\n  width: 105%;\n}\n\n/*\n *  Highlight 2\n */\n.highlight2 {\n  color: rgba(0, 0, 255, 0.8);\n  text-decoration: none;\n  position: relative;\n  padding: 0 0 0.5rem;\n}\n.highlight2::after {\n  content: \"\";\n  position: absolute;\n  left: 50%;\n  bottom: 5px;\n  transform: translateX(-100%) scaleX(0);\n  width: 100%;\n  height: 3px;\n  background-color: rgba(0, 0, 51, 0.8);\n  transition: transform 250ms;\n}\n.highlight2:hover {\n  color: rgba(0, 0, 51, 0.8);\n}\n.highlight2:hover::after {\n  transform: translateX(-50%) scaleX(1);\n}\n.highlight2:visited {\n  color: rgba(0, 0, 179, 0.8);\n}\n.social-media-list .highlight2:hover {\n  text-decoration: none;\n}\n\n/*\n *  Highlight 3\n */\n.highlight3 {\n  box-shadow: inset 0 0 0 4px #58afd1;\n  color: #58afd1;\n  transition: color 0.25s 0.0833333333s;\n  position: relative;\n  background: none;\n  border: none;\n  cursor: pointer;\n  line-height: 1.5;\n  font: 700 1.2rem \"Roboto Slab\", sans-serif;\n  padding: 1em 2em;\n  letter-spacing: 0.05rem;\n}\n.highlight3::before, .highlight3::after {\n  border: 0 solid transparent;\n  box-sizing: border-box;\n  content: \"\";\n  pointer-events: none;\n  position: absolute;\n  width: 0;\n  height: 0;\n  bottom: 0;\n  right: 0;\n}\n.highlight3::before {\n  border-bottom-width: 4px;\n  border-left-width: 4px;\n}\n.highlight3::after {\n  border-top-width: 4px;\n  border-right-width: 4px;\n}\n.highlight3:hover {\n  color: #256a85;\n}\n.highlight3:hover::before, .highlight3:hover::after {\n  border-color: #256a85;\n  transition: border-color 0s, width 0.25s, height 0.25s;\n  width: 100%;\n  height: 100%;\n}\n.highlight3:hover::before {\n  transition-delay: 0s, 0s, 0.25s;\n}\n.highlight3:hover::after {\n  transition-delay: 0s, 0.25s, 0s;\n}\n.highlight3:focus {\n  outline: 2px dotted #55d7dc;\n}\n\n/*\n *  Highlight 4\n */\n.highlight4 {\n  padding: 10px 45px;\n  text-decoration: none;\n  font-family: \"Poppins\", sans-serif;\n  color: white;\n  background: #6225e6;\n  transition: 1s;\n  box-shadow: 6px 6px 0 black;\n  transform: skewX(-15deg);\n}\n.highlight4:focus {\n  outline: none;\n}\n.highlight4:hover {\n  transition: 0.5s;\n  padding: 14px 47px;\n  box-shadow: 10px 10px 0 #fbc638;\n}\n\n/*\n * TwoPartsLinks\n */\n.TwoPartsLinks {\n  padding: 10px;\n}\n.TwoPartsLinks:hover .TwoPartsLinks_first-word, .TwoPartsLinks:focus .TwoPartsLinks_first-word {\n  transform: translate3d(0, -105%, 0);\n}\n.TwoPartsLinks:hover .TwoPartsLinks_second-word, .TwoPartsLinks:focus .TwoPartsLinks_second-word {\n  transform: translate3d(0, 105%, 0);\n}\n\n.TwoPartsLinks_title {\n  display: inline-block;\n  overflow: hidden;\n}\n\n.TwoPartsLinks_first-word,\n.TwoPartsLinks_second-word {\n  display: inline-block;\n  position: relative;\n  transition: transform 0.3s;\n}\n.TwoPartsLinks_first-word::before,\n.TwoPartsLinks_second-word::before {\n  position: absolute;\n  content: attr(data-hover);\n}\n\n.TwoPartsLinks_first-word {\n  color: #077036;\n}\n.TwoPartsLinks_first-word::before {\n  top: 105%;\n  color: #626262;\n}\n\n.TwoPartsLinks_second-word {\n  color: #626262;\n}\n.TwoPartsLinks_second-word::before {\n  bottom: 105%;\n  color: #077036;\n}\n", ""]);
 
 // exports
 

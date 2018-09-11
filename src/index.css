@@ -1,3 +1,7 @@
+/*
+ *  Highlight 1
+ */
+@import url("https://fonts.googleapis.com/css?family=Poppins:900i");
 .highlight1 {
   z-index: 3;
   font-weight: bold;
@@ -32,6 +36,9 @@
   width: 105%;
 }
 
+/*
+ *  Highlight 2
+ */
 .highlight2 {
   color: rgba(0, 0, 255, 0.8);
   text-decoration: none;
@@ -60,6 +67,128 @@
 }
 .social-media-list .highlight2:hover {
   text-decoration: none;
+}
+
+/*
+ *  Highlight 3
+ */
+.highlight3 {
+  box-shadow: inset 0 0 0 4px #58afd1;
+  color: #58afd1;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.2rem "Roboto Slab", sans-serif;
+  padding: 1em 2em;
+  letter-spacing: 0.05rem;
+}
+.highlight3::before, .highlight3::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+.highlight3::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+.highlight3::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+.highlight3:hover {
+  color: #256a85;
+}
+.highlight3:hover::before, .highlight3:hover::after {
+  border-color: #256a85;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+.highlight3:hover::before {
+  transition-delay: 0s, 0s, 0.25s;
+}
+.highlight3:hover::after {
+  transition-delay: 0s, 0.25s, 0s;
+}
+.highlight3:focus {
+  outline: 2px dotted #55d7dc;
+}
+
+/*
+ *  Highlight 4
+ */
+.highlight4 {
+  padding: 10px 45px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  background: #6225e6;
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+}
+.highlight4:focus {
+  outline: none;
+}
+.highlight4:hover {
+  transition: 0.5s;
+  padding: 14px 47px;
+  box-shadow: 10px 10px 0 #fbc638;
+}
+
+/*
+ * TwoPartsLinks
+ */
+.TwoPartsLinks {
+  padding: 10px;
+}
+.TwoPartsLinks:hover .TwoPartsLinks_first-word, .TwoPartsLinks:focus .TwoPartsLinks_first-word {
+  transform: translate3d(0, -105%, 0);
+}
+.TwoPartsLinks:hover .TwoPartsLinks_second-word, .TwoPartsLinks:focus .TwoPartsLinks_second-word {
+  transform: translate3d(0, 105%, 0);
+}
+
+.TwoPartsLinks_title {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.TwoPartsLinks_first-word,
+.TwoPartsLinks_second-word {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.3s;
+}
+.TwoPartsLinks_first-word::before,
+.TwoPartsLinks_second-word::before {
+  position: absolute;
+  content: attr(data-hover);
+}
+
+.TwoPartsLinks_first-word {
+  color: #077036;
+}
+.TwoPartsLinks_first-word::before {
+  top: 105%;
+  color: #626262;
+}
+
+.TwoPartsLinks_second-word {
+  color: #626262;
+}
+.TwoPartsLinks_second-word::before {
+  bottom: 105%;
+  color: #077036;
 }
 
 /*# sourceMappingURL=index.css.map */
