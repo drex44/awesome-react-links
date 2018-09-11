@@ -6,7 +6,7 @@ A collection of animated links/ anchor tags. this can be used on any clickable e
 
 ## Demo
 
-- In progress ...
+- [awesome-react-links.surge.sh](https://awesome-react-links.surge.sh)
 
 ## Installation
 
@@ -23,6 +23,8 @@ import AwesomeLinks from "awesome-react-links";
   <a href="https://www.google.com">Google</a>
 </AwesomeLinks>;
 ```
+
+check out the demo for more!
 
 # All styles
 
