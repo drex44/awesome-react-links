@@ -1,4 +1,4 @@
-# Awesome React Links ![version-0.1.x](https://img.shields.io/badge/version-0.1.0.alpha.3-yellow.svg) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
+# Awesome React Links ![version-0.1.x](https://img.shields.io/badge/version-0.1.0.alpha.4-yellow.svg) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
 
 > This is still minor version and is in development. current version is not performance efficient.
 

@@ -13,6 +13,9 @@
 - highlight6 dotted thin
 - highlight6 dashed thick
 - highlight6 dashed thin
+- highlight7 pulse
+- highlight7 raise
+- highlight7 offset
 
 ## TwoPartsLinks
 
