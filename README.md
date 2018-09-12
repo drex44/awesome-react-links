@@ -1,4 +1,4 @@
-# Awesome React Links ![version-0.1.x](https://img.shields.io/badge/version-0.1.0.alpha.4-yellow.svg) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
+# Awesome React Links ![version-0.1.x](https://img.shields.io/badge/version-0.1.0.alpha-yellow.svg) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
 
 > This is still minor version and is in development. current version is not performance efficient.
 
@@ -28,12 +28,19 @@ check out the [demo](https://awesome-react-links.surge.sh) for all styles and ho
 
 ## All styles
 
-[Styles](Styles.md)
+[Styles](STYLES.md)
 
-# Contributions
+## Contributions
 
 This is my first published package in npm so if you have an improvement or suggestion,
 
 - Raise an issue and submit on github.
 - Look in the projects in github to get the ideas on ways to contribute.
 - Create a pull request! :)
+
+Follow the steps given [here](CONTRIBUTIONS.md) before submitting a PR.
+
+## License
+
+This repository is licensed under the MIT license. See `LICENSE` for
+details.
