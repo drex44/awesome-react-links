@@ -5,6 +5,7 @@ You can contribute anyway you like. some ideas,
 - Update documents
 - Better demo site
 - Submit new style
+- Better naming convention for link styles
 - Imporve performance
 - Something else?
 

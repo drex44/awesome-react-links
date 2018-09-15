@@ -8,7 +8,6 @@ $brand-color-dark: darken($brand-color, 40%) !default;
 .highlight1 {
   z-index: 3;
   font-weight: bold;
-  line-height: 1.4 !important;
   padding: 10px 5px 2px 5px;
   display: inline-block;
   color: #343434 !important;
@@ -43,130 +42,9 @@ $brand-color-dark: darken($brand-color, 40%) !default;
  *  Highlight 2
  */
 
-.highlight2 {
-  color: $brand-color;
-  text-decoration: none;
-  position: relative;
-  padding: 0 0 0.5rem;
-  &::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 5px;
-    transform: translateX(-100%) scaleX(0);
-    width: 100%;
-    height: 3px;
-    background-color: $brand-color-dark;
-    transition: transform 250ms;
-  }
-  &:hover {
-    color: $brand-color-dark;
-    &::after {
-      transform: translateX(-50%) scaleX(1);
-    }
-  }
-  &:visited {
-    color: darken($brand-color, 15%);
-  }
-  .social-media-list &:hover {
-    text-decoration: none;
-  }
-}
-
-/*
- *  Highlight 3
- */
-
-@mixin highlight3-border-drawing(
-  $color: #ccc,
-  $hover: black,
-  $width: 2px,
-  $vertical: top,
-  $horizontal: left,
-  $duration: 0.25s
-) {
-  box-shadow: inset 0 0 0 $width $color;
-  color: $color;
-  transition: color $duration $duration/3;
-  position: relative;
-
-  &::before,
-  &::after {
-    border: 0 solid transparent;
-    box-sizing: border-box;
-    content: "";
-    pointer-events: none;
-    position: absolute;
-    width: 0;
-    height: 0;
-
-    #{$vertical}: 0;
-    #{$horizontal}: 0;
-  }
-
-  &::before {
-    $h-side: if($horizontal == "left", "right", "left");
-
-    border-#{$vertical}-width: $width;
-    border-#{$h-side}-width: $width;
-  }
-
-  &::after {
-    $v-side: if($vertical == "top", "bottom", "top");
-
-    border-#{$v-side}-width: $width;
-    border-#{$horizontal}-width: $width;
-  }
-
-  &:hover {
-    color: $hover;
-
-    &::before,
-    &::after {
-      border-color: $hover;
-      transition: border-color 0s, width $duration, height $duration;
-      width: 100%;
-      height: 100%;
-    }
-
-    &::before {
-      transition-delay: 0s, 0s, $duration;
-    }
-
-    &::after {
-      transition-delay: 0s, $duration, 0s;
-    }
-  }
-}
-
-.highlight3 {
-  @include highlight3-border-drawing(
-    #58afd1,
-    darken(#58afd1, 25%),
-    4px,
-    bottom,
-    right
-  );
-  background: none;
-  border: none;
-  cursor: pointer;
-  line-height: 1.5;
-  font: 700 1.2rem "Roboto Slab", sans-serif;
-  padding: 1em 2em;
-  letter-spacing: 0.05rem;
-
-  &:focus {
-    outline: 2px dotted #55d7dc;
-  }
-}
-
-/*
- *  Highlight 4
- */
-
 @import url("https://fonts.googleapis.com/css?family=Poppins:900i");
 
-.highlight4 {
+.highlight2 {
   padding: 10px 45px;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
@@ -186,7 +64,7 @@ $brand-color-dark: darken($brand-color, 40%) !default;
 }
 
 /*
- *  Highlight 5
+ *  Highlight 3
  */
 
 @import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:700";
@@ -196,7 +74,7 @@ $primary: #ff0072;
 $second: #644cad;
 $third: #4426a8;
 
-.highlight5 {
+.highlight3 {
   font-family: $font;
   color: $primary;
   text-decoration: none;
@@ -210,9 +88,7 @@ $third: #4426a8;
   }
 }
 
-.highlight5 {
-  font-size: 18px;
-  letter-spacing: 2px;
+.highlight3 {
   text-transform: uppercase;
   display: inline-block;
   text-align: center;
@@ -258,41 +134,254 @@ $third: #4426a8;
 }
 
 /*
+ *  Highlight 4
+ */
+
+$color: #2194e0;
+
+@keyframes sheen {
+  0% {
+    transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    transform: skewY(-45deg) translateX(12.5em);
+  }
+}
+
+.highlight4 {
+  padding: 0.75em 2em;
+  text-align: center;
+  text-decoration: none;
+  color: $color;
+  border: 2px solid $color;
+  display: inline-block;
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: "";
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 100%;
+    width: 3em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4.5em;
+    transform: skewX(-45deg) translateX(0);
+    transition: none;
+  }
+  &:hover {
+    background-color: $color;
+    color: #fff;
+    border-bottom: 4px solid darken($color, 10%);
+    &:before {
+      transform: skewX(-45deg) translateX(13.5em);
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:900i");
+
+.highlight41 {
+  padding: 10px 45px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  background: #6225e6;
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    transition: 0.5s;
+    padding: 14px 47px;
+    box-shadow: 10px 10px 0 #fbc638;
+  }
+}
+
+/*
+ *  Highlight 5
+ */
+
+@import "https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";
+
+$highlight5-border-color: rgba(255, 0, 0, 0.3);
+
+.highlight5 {
+  font-family: "Open Sans Condensed", sans-serif;
+  padding: 1em 2em;
+  text-align: center;
+
+  /* 
+  ========================
+        BUTTON ONE
+  ========================
+  */
+  &.btn-one {
+    background-color: #5e5e5e;
+    color: #fff;
+    transition: all 0.3s;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      transition: all 0.3s;
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+      border-top-style: solid;
+      border-bottom-style: solid;
+      border-top-color: $highlight5-border-color;
+      border-bottom-color: $highlight5-border-color;
+      transform: scale(0.1, 1);
+    }
+    &:hover::before {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      transition: all 0.3s;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    &:hover::after {
+      opacity: 0;
+      transform: scale(0.1, 1);
+    }
+  }
+
+  /* 
+  ========================
+        BUTTON TWO
+  ========================
+  */
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #3c3c3c;
+  transition: all 0.5s;
+  position: relative;
+  z-index: 2;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  &:hover::before {
+    transform: rotate(-45deg);
+    background-color: rgba(255, 255, 255, 0);
+  }
+  &:hover::after {
+    transform: rotate(45deg);
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  /* 
+  ========================
+        BUTTON THREE
+  ========================
+  */
+  &.btn-three {
+    color: #fff;
+    background-color: #818181;
+    transition: all 0.5s;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: all 0.3s;
+    }
+    &:hover::before {
+      opacity: 0;
+      transform: scale(0.5, 0.5);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      transition: all 0.3s;
+      border: 1px solid $highlight5-border-color;
+      transform: scale(1.2, 1.2);
+    }
+    &:hover::after {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+  }
+}
+
+/*
  *  Highlight 6
  */
 
-@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
-
 .highlight6 {
-  font-family: "Patrick Hand SC", cursive;
-  background: transparent;
-  padding: 1rem;
-  transition: all 0.5s ease;
-  color: #41403e;
-  letter-spacing: 1px;
-  outline: none;
-  box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, 0.2);
-  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  color: $brand-color;
+  text-decoration: none;
+  position: relative;
+  padding: 0 0 0.5rem;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-100%) scaleX(0);
+    width: 100%;
+    height: 3px;
+    background-color: $brand-color-dark;
+    transition: transform 250ms;
+  }
   &:hover {
-    box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, 0.5);
+    color: $brand-color-dark;
+    &::after {
+      transform: translateX(-50%) scaleX(1);
+    }
   }
-  &.lined.thick {
-    border: solid 5px #41403e;
+  &:visited {
+    color: darken($brand-color, 15%);
   }
-  &.dotted.thick {
-    border: dotted 5px #41403e;
-  }
-  &.dashed.thick {
-    border: dashed 5px #41403e;
-  }
-  &.lined.thin {
-    border: solid 2px #41403e;
-  }
-  &.dotted.thin {
-    border: dotted 2px #41403e;
-  }
-  &.dashed.thin {
-    border: dashed 2px #41403e;
+  .social-media-list &:hover {
+    text-decoration: none;
   }
 }
 
@@ -300,17 +389,91 @@ $third: #4426a8;
  *  Highlight 7
  */
 
-//=== Set button colors
-// If you wonder why use Sass vars or CSS custom properties...
-// Make a map with the class names and matching colors
+$border-color: black;
+
+.highlight7 {
+  padding: 1em 2em;
+  font-family: sans-serif;
+  text-decoration: none;
+  position: relative;
+  vertical-align: middle;
+  color: #0b7;
+  display: inline-block;
+  text-align: center;
+  transition: 0.5s;
+  cursor: pointer;
+  border: 2px solid #0b7;
+  -webkit-transition: 0.5s;
+
+  &.corners::before {
+    border-bottom: 3px solid $border-color;
+    border-left: 3px solid $border-color;
+    -webkit-transform-origin: 0 100%;
+  }
+
+  &.corners::after {
+    border-top: 3px solid $border-color;
+    border-right: 3px solid $border-color;
+    -webkit-transform-origin: 100% 0%;
+  }
+
+  &.cross-corners::before {
+    border-bottom: 3px solid $border-color;
+    border-left: 3px solid $border-color;
+    -webkit-transform-origin: 100% 0%;
+  }
+
+  &.cross-corners::after {
+    border-top: 3px solid $border-color;
+    border-right: 3px solid $border-color;
+    -webkit-transform-origin: 0% 100%;
+  }
+
+  &.underline::before {
+    border-bottom: 3px solid $border-color;
+    border-left: 0;
+    -webkit-transform-origin: 0% 100%;
+  }
+
+  &.underline::after {
+    border-top: 0;
+    border-right: 0;
+    -webkit-transform-origin: 50% 50%;
+  }
+
+  &:hover {
+    border: 2px solid rgba(0, 160, 80, 0);
+    color: black;
+  }
+  &::before,
+  &::after {
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    -webkit-transform: scale(0);
+    transition: 0.5s;
+  }
+  &:hover::after,
+  &:hover::before {
+    -webkit-transform: scale(1);
+  }
+}
+
+/*
+ *  Highlight 8
+ */
+
 $colors: (
   pulse: #19bc8b,
   raise: #19bc8b,
   offset: #19bc8b
 );
 
-// Sass variables compile to a static string; CSS variables are dynamic and inherited
-// Loop through the map and set CSS custom properties using Sass variables
 @each $button, $color in $colors {
   .#{$button} {
     --color: #{$color};
@@ -318,8 +481,7 @@ $colors: (
   }
 }
 
-// Now every button will have different colors as set above. We get to use the same structure, only changing the custom properties.
-.highlight7 {
+.highlight8 {
   color: var(--color);
   transition: 0.25s;
   text-decoration: none;
@@ -363,6 +525,128 @@ $colors: (
       box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
       color: white;
     }
+  }
+}
+
+/*
+ * Highlight 9
+ */
+
+@mixin highlight9-border-drawing(
+  $color: #19bc8b,
+  $hover: darken(#19bc8b, 25%),
+  $width: 2px,
+  $vertical: top,
+  $horizontal: left,
+  $duration: 0.25s
+) {
+  box-shadow: inset 0 0 0 $width $color;
+  color: $color;
+  transition: color $duration $duration/3;
+  position: relative;
+
+  &::before,
+  &::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+
+    #{$vertical}: 0;
+    #{$horizontal}: 0;
+  }
+
+  &::before {
+    $h-side: if($horizontal == "left", "right", "left");
+    border-#{$vertical}-width: $width;
+    border-#{$h-side}-width: $width;
+  }
+
+  &::after {
+    $v-side: if($vertical == "top", "bottom", "top");
+    border-#{$v-side}-width: $width;
+    border-#{$horizontal}-width: $width;
+  }
+
+  &:hover {
+    color: $hover;
+
+    &::before,
+    &::after {
+      border-color: $hover;
+      transition: border-color 0s, width $duration, height $duration;
+      width: 100%;
+      height: 100%;
+    }
+
+    &::before {
+      transition-delay: 0s, 0s, $duration;
+    }
+
+    &::after {
+      transition-delay: 0s, $duration, 0s;
+    }
+  }
+}
+
+.highlight9 {
+  @include highlight9-border-drawing(
+    #19bc8b,
+    darken(#19bc8b, 25%),
+    4px,
+    bottom,
+    right
+  );
+  background: none;
+  border: none;
+  font-weight: 700;
+  font-family: "Roboto Slab", sans-serif;
+  padding: 1em 2em;
+
+  &:focus {
+    outline: 2px dotted #55d7dc;
+  }
+}
+
+/*
+ * highlight10
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+
+.highlight10 {
+  font-family: "Patrick Hand SC", cursive;
+  background: transparent;
+  padding: 1rem;
+  transition: all 0.5s ease;
+  color: #41403e;
+  letter-spacing: 1px;
+  outline: none;
+  box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  &:hover {
+    box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, 0.5);
+  }
+  &.lined.thick {
+    border: solid 5px #41403e;
+  }
+  &.dotted.thick {
+    border: dotted 5px #41403e;
+  }
+  &.dashed.thick {
+    border: dashed 5px #41403e;
+  }
+  &.lined.thin {
+    border: solid 2px #41403e;
+  }
+  &.dotted.thin {
+    border: dotted 2px #41403e;
+  }
+  &.dashed.thin {
+    border: dashed 2px #41403e;
   }
 }
 
@@ -422,7 +706,6 @@ $btn-bg: #10131c;
       font-family: "Source Code Pro", monospace;
       letter-spacing: 1px;
       text-transform: uppercase;
-      font-size: 18px;
       background: $btn-bg;
       transform: scale(0.96, 0.96);
       transition: all 0.3s;
@@ -528,7 +811,6 @@ $color-border: #ccd7d7;
   width: 164px;
   height: 36px;
   perspective: 300px;
-  font-size: 24px;
   margin: 8px;
   .social-cube {
     position: absolute;
