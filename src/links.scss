@@ -1,16 +1,18 @@
+$padding: 0.75em 2em;
+
+@mixin setColor($color) {
+  color: $color;
+}
+
 /*
  *  Highlight 1
  */
 
-$brand-color: #343434 !default;
-$brand-color-dark: darken($brand-color, 40%) !default;
-
 .highlight1 {
-  z-index: 3;
   font-weight: bold;
   padding: 10px 5px 2px 5px;
   display: inline-block;
-  color: #343434 !important;
+  color: #343434;
   transition: color 250ms, text-shadow 250ms;
   text-decoration: none !important;
   background: none;
@@ -29,8 +31,7 @@ $brand-color-dark: darken($brand-color, 40%) !default;
     transition: all 250ms;
   }
   &:hover {
-    color: white !important;
-    text-shadow: 0px 1px 0px rgba(0, 0, 0, 1);
+    color: white;
     &::after {
       height: 105%;
       width: 105%;
@@ -45,13 +46,16 @@ $brand-color-dark: darken($brand-color, 40%) !default;
 @import url("https://fonts.googleapis.com/css?family=Poppins:900i");
 
 .highlight2 {
+  --style-color1: #6225e6;
+  --style-color2: #fbc638;
+  --style-color3: black;
   padding: 10px 45px;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
   color: white;
-  background: #6225e6;
+  background: var(--style-color1);
   transition: 1s;
-  box-shadow: 6px 6px 0 black;
+  box-shadow: 6px 6px 0 var(--style-color2);
   transform: skewX(-15deg);
   &:focus {
     outline: none;
@@ -59,7 +63,7 @@ $brand-color-dark: darken($brand-color, 40%) !default;
   &:hover {
     transition: 0.5s;
     padding: 14px 47px;
-    box-shadow: 10px 10px 0 #fbc638;
+    box-shadow: 10px 10px 0px var(--style-color3);
   }
 }
 
@@ -75,8 +79,9 @@ $second: #644cad;
 $third: #4426a8;
 
 .highlight3 {
+  --style-color1: #ff0072;
   font-family: $font;
-  color: $primary;
+  color: var(--style-color1);
   text-decoration: none;
   -webkit-transition: 0.3s all ease;
   transition: 0.3s ease all;
@@ -86,17 +91,13 @@ $third: #4426a8;
   &:focus {
     color: #fff;
   }
-}
-
-.highlight3 {
   text-transform: uppercase;
   display: inline-block;
   text-align: center;
-  width: 270px;
   font-weight: bold;
-  padding: 14px 0px;
-  border: 3px solid $primary;
-  border-radius: 2px;
+  padding: $padding;
+  border: 3px solid var(--style-color1);
+  border-radius: 4px;
   position: relative;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
   z-index: 2;
@@ -110,7 +111,7 @@ $third: #4426a8;
     bottom: 0;
     opacity: 0;
     content: "";
-    background-color: $primary;
+    background-color: var(--style-color1);
     z-index: -1;
   }
   &:hover {
@@ -137,8 +138,6 @@ $third: #4426a8;
  *  Highlight 4
  */
 
-$color: #2194e0;
-
 @keyframes sheen {
   0% {
     transform: skewY(-45deg) translateX(0);
@@ -147,13 +146,16 @@ $color: #2194e0;
     transform: skewY(-45deg) translateX(12.5em);
   }
 }
+$color: #2194e0;
 
 .highlight4 {
-  padding: 0.75em 2em;
+  --style-color1: rgb(25, 119, 181);
+  filter: brightness(90%);
+  padding: $padding;
   text-align: center;
   text-decoration: none;
-  color: $color;
-  border: 2px solid $color;
+  color: var(--style-color1);
+  border: 2px solid var(--style-color1);
   display: inline-block;
   border-radius: 0.3em;
   transition: all 0.2s ease-in-out;
@@ -172,34 +174,13 @@ $color: #2194e0;
     transition: none;
   }
   &:hover {
-    background-color: $color;
+    background-color: var(--style-color1);
     color: #fff;
-    border-bottom: 4px solid darken($color, 10%);
+    border-bottom: 4px solid var(--style-color1);
     &:before {
       transform: skewX(-45deg) translateX(13.5em);
       transition: all 0.5s ease-in-out;
     }
-  }
-}
-
-@import url("https://fonts.googleapis.com/css?family=Poppins:900i");
-
-.highlight41 {
-  padding: 10px 45px;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  color: white;
-  background: #6225e6;
-  transition: 1s;
-  box-shadow: 6px 6px 0 black;
-  transform: skewX(-15deg);
-  &:focus {
-    outline: none;
-  }
-  &:hover {
-    transition: 0.5s;
-    padding: 14px 47px;
-    box-shadow: 10px 10px 0 #fbc638;
   }
 }
 
@@ -212,8 +193,10 @@ $color: #2194e0;
 $highlight5-border-color: rgba(255, 0, 0, 0.3);
 
 .highlight5 {
+  --style-color1: #5e5e5e;
+  --style-color2: rgba(255, 0, 0, 0.3);
   font-family: "Open Sans Condensed", sans-serif;
-  padding: 1em 2em;
+  padding: $padding;
   text-align: center;
 
   /* 
@@ -222,7 +205,7 @@ $highlight5-border-color: rgba(255, 0, 0, 0.3);
   ========================
   */
   &.btn-one {
-    background-color: #5e5e5e;
+    background-color: var(--style-color1);
     color: #fff;
     transition: all 0.3s;
     position: relative;
@@ -269,7 +252,7 @@ $highlight5-border-color: rgba(255, 0, 0, 0.3);
   ========================
   */
   color: rgba(255, 255, 255, 0.5);
-  background-color: #3c3c3c;
+  background-color: var(--style-color1);
   transition: all 0.5s;
   position: relative;
   z-index: 2;
@@ -282,7 +265,7 @@ $highlight5-border-color: rgba(255, 0, 0, 0.3);
     height: 100%;
     z-index: 1;
     transition: all 0.5s;
-    border: 1px solid rgba(255, 0, 0, 0.3);
+    border: 1px solid var(--style-color2);
     background-color: rgba(255, 255, 255, 0.1);
   }
   &::after {
@@ -294,7 +277,7 @@ $highlight5-border-color: rgba(255, 0, 0, 0.3);
     height: 100%;
     z-index: 1;
     transition: all 0.5s;
-    border: 1px solid rgba(255, 0, 0, 0.3);
+    border: 1px solid var(--style-color2);
     background-color: rgba(255, 255, 255, 0.1);
   }
   &:hover::before {
@@ -355,30 +338,42 @@ $highlight5-border-color: rgba(255, 0, 0, 0.3);
  *  Highlight 6
  */
 
+$brand-color: #343434;
+$brand-color-dark: darken($brand-color, 40%);
+
 .highlight6 {
+  --style-color1: #343434;
   color: $brand-color;
   text-decoration: none;
   position: relative;
-  padding: 0 0 0.5rem;
+  padding: 0 0.2em 0.6em 0.2em;
+  &.left {
+    &::after {
+      transform: translateX(-100%) scaleX(0);
+      background-color: var(--style-color1);
+    }
+  }
+  &.center {
+    &::after {
+      transform: translateX(-50%) scaleX(0);
+      background-color: var(--style-color1);
+    }
+  }
   &::after {
     content: "";
     position: absolute;
     left: 50%;
     bottom: 5px;
-    transform: translateX(-100%) scaleX(0);
     width: 100%;
     height: 3px;
-    background-color: $brand-color-dark;
+    transform: translateX(-100%) scaleX(0);
+    background-color: var(--style-color1);
     transition: transform 250ms;
   }
   &:hover {
-    color: $brand-color-dark;
     &::after {
       transform: translateX(-50%) scaleX(1);
     }
-  }
-  &:visited {
-    color: darken($brand-color, 15%);
   }
   .social-media-list &:hover {
     text-decoration: none;
@@ -389,10 +384,10 @@ $highlight5-border-color: rgba(255, 0, 0, 0.3);
  *  Highlight 7
  */
 
-$border-color: black;
-
 .highlight7 {
-  padding: 1em 2em;
+  --style-color1: #0b7;
+  --style-color2: black;
+  padding: $padding;
   font-family: sans-serif;
   text-decoration: none;
   position: relative;
@@ -402,35 +397,35 @@ $border-color: black;
   text-align: center;
   transition: 0.5s;
   cursor: pointer;
-  border: 2px solid #0b7;
+  border: 2px solid var(--style-color1);
   -webkit-transition: 0.5s;
 
   &.corners::before {
-    border-bottom: 3px solid $border-color;
-    border-left: 3px solid $border-color;
+    border-bottom: 3px solid var(--style-color2);
+    border-left: 3px solid var(--style-color2);
     -webkit-transform-origin: 0 100%;
   }
 
   &.corners::after {
-    border-top: 3px solid $border-color;
-    border-right: 3px solid $border-color;
+    border-top: 3px solid var(--style-color2);
+    border-right: 3px solid var(--style-color2);
     -webkit-transform-origin: 100% 0%;
   }
 
   &.cross-corners::before {
-    border-bottom: 3px solid $border-color;
-    border-left: 3px solid $border-color;
+    border-bottom: 3px solid var(--style-color2);
+    border-left: 3px solid var(--style-color2);
     -webkit-transform-origin: 100% 0%;
   }
 
   &.cross-corners::after {
-    border-top: 3px solid $border-color;
-    border-right: 3px solid $border-color;
+    border-top: 3px solid var(--style-color2);
+    border-right: 3px solid var(--style-color2);
     -webkit-transform-origin: 0% 100%;
   }
 
   &.underline::before {
-    border-bottom: 3px solid $border-color;
+    border-bottom: 3px solid var(--style-color2);
     border-left: 0;
     -webkit-transform-origin: 0% 100%;
   }
@@ -482,6 +477,8 @@ $colors: (
 }
 
 .highlight8 {
+  --style-color1: #19bc8b;
+  --style-color2: #1937bc;
   color: var(--color);
   transition: 0.25s;
   text-decoration: none;
@@ -490,17 +487,18 @@ $colors: (
   font: inherit;
   line-height: 1;
   margin: 0.5em;
-  padding: 1em 2em;
+  padding: $padding;
+  border-color: var(--style-color1);
 
   &:hover,
   &:focus {
-    border-color: var(--hover);
-    color: var(--hover);
+    border-color: var(--style-color2);
+    color: var(--style-color2);
   }
   // Size can also be negative; see how it's smaller than the element
   &.raise:hover,
   &.raise:focus {
-    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    box-shadow: 0 0.5em 0.5em -0.4em var(--style-color2);
     transform: translateY(-0.25em);
   }
 
@@ -512,17 +510,19 @@ $colors: (
   }
   @keyframes pulse {
     0% {
-      box-shadow: 0 0 0 0 var(--hover);
+      box-shadow: 0 0 0 0 var(--style-color1);
     }
   }
 
   // Multiple shadows, one on the outside, another on the inside
   &.offset {
-    box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+    box-shadow: 0.3em 0.3em 0 0 var(--style-color1),
+      inset 0.3em 0.3em 0 0 var(--style-color1);
 
     &:hover,
     &:focus {
-      box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+      box-shadow: 0 0 0 0 var(--style-color2),
+        inset 6em 3.5em 0 0 var(--style-color2);
       color: white;
     }
   }
@@ -534,12 +534,13 @@ $colors: (
 
 @mixin highlight9-border-drawing(
   $color: #19bc8b,
-  $hover: darken(#19bc8b, 25%),
+  $hover: #1937bc,
   $width: 2px,
   $vertical: top,
   $horizontal: left,
   $duration: 0.25s
 ) {
+  text-decoration: none;
   box-shadow: inset 0 0 0 $width $color;
   color: $color;
   transition: color $duration $duration/3;
@@ -593,21 +594,23 @@ $colors: (
 }
 
 .highlight9 {
+  --style-color1: #58afd1;
+  --style-color2: #256a85;
   @include highlight9-border-drawing(
-    #19bc8b,
-    darken(#19bc8b, 25%),
+    var(--style-color1),
+    var(--style-color2),
     4px,
     bottom,
     right
   );
   background: none;
   border: none;
-  font-weight: 700;
+  font-weight: bold;
   font-family: "Roboto Slab", sans-serif;
-  padding: 1em 2em;
+  padding: 1.1em 2em;
 
   &:focus {
-    outline: 2px dotted #55d7dc;
+    outline: 2px dotted var(--style-color1);
   }
 }
 
@@ -618,11 +621,12 @@ $colors: (
 @import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
 
 .highlight10 {
+  --style-color1: #41403e;
   font-family: "Patrick Hand SC", cursive;
   background: transparent;
-  padding: 1rem;
+  padding: $padding;
   transition: all 0.5s ease;
-  color: #41403e;
+  color: var(--style-color1);
   letter-spacing: 1px;
   outline: none;
   box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, 0.2);
@@ -631,22 +635,22 @@ $colors: (
     box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, 0.5);
   }
   &.lined.thick {
-    border: solid 5px #41403e;
+    border: solid 5px var(--style-color1);
   }
   &.dotted.thick {
-    border: dotted 5px #41403e;
+    border: dotted 5px var(--style-color1);
   }
   &.dashed.thick {
-    border: dashed 5px #41403e;
+    border: dashed 5px var(--style-color1);
   }
   &.lined.thin {
-    border: solid 2px #41403e;
+    border: solid 2px var(--style-color1);
   }
   &.dotted.thin {
-    border: dotted 2px #41403e;
+    border: dotted 2px var(--style-color1);
   }
   &.dashed.thin {
-    border: dashed 2px #41403e;
+    border: dashed 2px var(--style-color1);
   }
 }
 
@@ -725,9 +729,13 @@ $btn-bg: #10131c;
 
 $color-primary: #077036;
 $color-secondary: #626262;
-$color-border: #ccd7d7;
+$color-border: black;
 
 .TwoPartsLinks_highlight1 {
+  --style-color1: #077036;
+  --style-color2: #626262;
+  --style-color3: #626262;
+
   padding: 10px;
   &:hover,
   &:focus {
@@ -759,20 +767,20 @@ $color-border: #ccd7d7;
 }
 
 .TwoPartsLinks_highlight1_first-word {
-  color: $color-primary;
+  color: var(--style-color1);
 
   &::before {
     top: 105%;
-    color: $color-secondary;
+    color: var(--style-color2);
   }
 }
 
 .TwoPartsLinks_highlight1_second-word {
-  color: $color-secondary;
+  color: var(--style-color2);
 
   &::before {
     bottom: 105%;
-    color: $color-primary;
+    color: var(--style-color1);
   }
 }
 

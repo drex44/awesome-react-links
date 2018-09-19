@@ -3,16 +3,14 @@
  */
 @import url("https://fonts.googleapis.com/css?family=Poppins:900i");
 @import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:700";
-@import url("https://fonts.googleapis.com/css?family=Poppins:900i");
 @import "https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";
 @import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
 @import url("https://fonts.googleapis.com/css?family=Dosis");
 .highlight1 {
-  z-index: 3;
   font-weight: bold;
   padding: 10px 5px 2px 5px;
   display: inline-block;
-  color: #343434 !important;
+  color: #343434;
   transition: color 250ms, text-shadow 250ms;
   text-decoration: none !important;
   background: none;
@@ -32,8 +30,7 @@
   transition: all 250ms;
 }
 .highlight1:hover {
-  color: white !important;
-  text-shadow: 0px 1px 0px black;
+  color: white;
 }
 .highlight1:hover::after {
   height: 105%;
@@ -44,13 +41,16 @@
  *  Highlight 2
  */
 .highlight2 {
+  --style-color1: #6225e6;
+  --style-color2: #fbc638;
+  --style-color3: black;
   padding: 10px 45px;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
   color: white;
-  background: #6225e6;
+  background: var(--style-color1);
   transition: 1s;
-  box-shadow: 6px 6px 0 black;
+  box-shadow: 6px 6px 0 var(--style-color2);
   transform: skewX(-15deg);
 }
 .highlight2:focus {
@@ -59,38 +59,35 @@
 .highlight2:hover {
   transition: 0.5s;
   padding: 14px 47px;
-  box-shadow: 10px 10px 0 #fbc638;
+  box-shadow: 10px 10px 0px var(--style-color3);
 }
 
 /*
  *  Highlight 3
  */
 .highlight3 {
+  --style-color1: #ff0072;
   font-family: "Source Sans Pro", sans-serif;
-  color: #ff0072;
+  color: var(--style-color1);
   text-decoration: none;
   -webkit-transition: 0.3s all ease;
   transition: 0.3s ease all;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.75em 2em;
+  border: 3px solid var(--style-color1);
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2;
 }
 .highlight3:hover {
   color: #fff;
 }
 .highlight3:focus {
   color: #fff;
-}
-
-.highlight3 {
-  text-transform: uppercase;
-  display: inline-block;
-  text-align: center;
-  width: 270px;
-  font-weight: bold;
-  padding: 14px 0px;
-  border: 3px solid #ff0072;
-  border-radius: 2px;
-  position: relative;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
-  z-index: 2;
 }
 .highlight3:before {
   -webkit-transition: 0.5s all ease;
@@ -102,7 +99,7 @@
   bottom: 0;
   opacity: 0;
   content: "";
-  background-color: #ff0072;
+  background-color: var(--style-color1);
   z-index: -1;
 }
 .highlight3:hover:before {
@@ -132,11 +129,13 @@
   }
 }
 .highlight4 {
+  --style-color1: rgb(25, 119, 181);
+  filter: brightness(90%);
   padding: 0.75em 2em;
   text-align: center;
   text-decoration: none;
-  color: #2194e0;
-  border: 2px solid #2194e0;
+  color: var(--style-color1);
+  border: 2px solid var(--style-color1);
   display: inline-block;
   border-radius: 0.3em;
   transition: all 0.2s ease-in-out;
@@ -156,40 +155,23 @@
   transition: none;
 }
 .highlight4:hover {
-  background-color: #2194e0;
+  background-color: var(--style-color1);
   color: #fff;
-  border-bottom: 4px solid #1977b5;
+  border-bottom: 4px solid var(--style-color1);
 }
 .highlight4:hover:before {
   transform: skewX(-45deg) translateX(13.5em);
   transition: all 0.5s ease-in-out;
 }
 
-.highlight41 {
-  padding: 10px 45px;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  color: white;
-  background: #6225e6;
-  transition: 1s;
-  box-shadow: 6px 6px 0 black;
-  transform: skewX(-15deg);
-}
-.highlight41:focus {
-  outline: none;
-}
-.highlight41:hover {
-  transition: 0.5s;
-  padding: 14px 47px;
-  box-shadow: 10px 10px 0 #fbc638;
-}
-
 /*
  *  Highlight 5
  */
 .highlight5 {
+  --style-color1: #5e5e5e;
+  --style-color2: rgba(255, 0, 0, 0.3);
   font-family: "Open Sans Condensed", sans-serif;
-  padding: 1em 2em;
+  padding: 0.75em 2em;
   text-align: center;
   /* 
   ========================
@@ -202,7 +184,7 @@
   ========================
   */
   color: rgba(255, 255, 255, 0.5);
-  background-color: #3c3c3c;
+  background-color: var(--style-color1);
   transition: all 0.5s;
   position: relative;
   z-index: 2;
@@ -213,7 +195,7 @@
   */
 }
 .highlight5.btn-one {
-  background-color: #5e5e5e;
+  background-color: var(--style-color1);
   color: #fff;
   transition: all 0.3s;
   position: relative;
@@ -262,7 +244,7 @@
   height: 100%;
   z-index: 1;
   transition: all 0.5s;
-  border: 1px solid rgba(255, 0, 0, 0.3);
+  border: 1px solid var(--style-color2);
   background-color: rgba(255, 255, 255, 0.1);
 }
 .highlight5::after {
@@ -274,7 +256,7 @@
   height: 100%;
   z-index: 1;
   transition: all 0.5s;
-  border: 1px solid rgba(255, 0, 0, 0.3);
+  border: 1px solid var(--style-color2);
   background-color: rgba(255, 255, 255, 0.1);
 }
 .highlight5:hover::before {
@@ -328,30 +310,33 @@
  *  Highlight 6
  */
 .highlight6 {
+  --style-color1: #343434;
   color: #343434;
   text-decoration: none;
   position: relative;
-  padding: 0 0 0.5rem;
+  padding: 0 0.2em 0.6em 0.2em;
+}
+.highlight6.left::after {
+  transform: translateX(-100%) scaleX(0);
+  background-color: var(--style-color1);
+}
+.highlight6.center::after {
+  transform: translateX(-50%) scaleX(0);
+  background-color: var(--style-color1);
 }
 .highlight6::after {
   content: "";
   position: absolute;
   left: 50%;
   bottom: 5px;
-  transform: translateX(-100%) scaleX(0);
   width: 100%;
   height: 3px;
-  background-color: black;
+  transform: translateX(-100%) scaleX(0);
+  background-color: var(--style-color1);
   transition: transform 250ms;
-}
-.highlight6:hover {
-  color: black;
 }
 .highlight6:hover::after {
   transform: translateX(-50%) scaleX(1);
-}
-.highlight6:visited {
-  color: #0e0e0e;
 }
 .social-media-list .highlight6:hover {
   text-decoration: none;
@@ -361,7 +346,9 @@
  *  Highlight 7
  */
 .highlight7 {
-  padding: 1em 2em;
+  --style-color1: #0b7;
+  --style-color2: black;
+  padding: 0.75em 2em;
   font-family: sans-serif;
   text-decoration: none;
   position: relative;
@@ -371,31 +358,31 @@
   text-align: center;
   transition: 0.5s;
   cursor: pointer;
-  border: 2px solid #0b7;
+  border: 2px solid var(--style-color1);
   -webkit-transition: 0.5s;
 }
 .highlight7.corners::before {
-  border-bottom: 3px solid black;
-  border-left: 3px solid black;
+  border-bottom: 3px solid var(--style-color2);
+  border-left: 3px solid var(--style-color2);
   -webkit-transform-origin: 0 100%;
 }
 .highlight7.corners::after {
-  border-top: 3px solid black;
-  border-right: 3px solid black;
+  border-top: 3px solid var(--style-color2);
+  border-right: 3px solid var(--style-color2);
   -webkit-transform-origin: 100% 0%;
 }
 .highlight7.cross-corners::before {
-  border-bottom: 3px solid black;
-  border-left: 3px solid black;
+  border-bottom: 3px solid var(--style-color2);
+  border-left: 3px solid var(--style-color2);
   -webkit-transform-origin: 100% 0%;
 }
 .highlight7.cross-corners::after {
-  border-top: 3px solid black;
-  border-right: 3px solid black;
+  border-top: 3px solid var(--style-color2);
+  border-right: 3px solid var(--style-color2);
   -webkit-transform-origin: 0% 100%;
 }
 .highlight7.underline::before {
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid var(--style-color2);
   border-left: 0;
   -webkit-transform-origin: 0% 100%;
 }
@@ -443,6 +430,8 @@
 }
 
 .highlight8 {
+  --style-color1: #19bc8b;
+  --style-color2: #1937bc;
   color: var(--color);
   transition: 0.25s;
   text-decoration: none;
@@ -451,14 +440,15 @@
   font: inherit;
   line-height: 1;
   margin: 0.5em;
-  padding: 1em 2em;
+  padding: 0.75em 2em;
+  border-color: var(--style-color1);
 }
 .highlight8:hover, .highlight8:focus {
-  border-color: var(--hover);
-  color: var(--hover);
+  border-color: var(--style-color2);
+  color: var(--style-color2);
 }
 .highlight8.raise:hover, .highlight8.raise:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  box-shadow: 0 0.5em 0.5em -0.4em var(--style-color2);
   transform: translateY(-0.25em);
 }
 .highlight8.pulse:hover, .highlight8.pulse:focus {
@@ -467,14 +457,14 @@
 }
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 var(--hover);
+    box-shadow: 0 0 0 0 var(--style-color1);
   }
 }
 .highlight8.offset {
-  box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+  box-shadow: 0.3em 0.3em 0 0 var(--style-color1), inset 0.3em 0.3em 0 0 var(--style-color1);
 }
 .highlight8.offset:hover, .highlight8.offset:focus {
-  box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+  box-shadow: 0 0 0 0 var(--style-color2), inset 6em 3.5em 0 0 var(--style-color2);
   color: white;
 }
 
@@ -482,15 +472,18 @@
  * Highlight 9
  */
 .highlight9 {
-  box-shadow: inset 0 0 0 4px #19bc8b;
-  color: #19bc8b;
+  --style-color1: #58afd1;
+  --style-color2: #256a85;
+  text-decoration: none;
+  box-shadow: inset 0 0 0 4px var(--style-color1);
+  color: var(--style-color1);
   transition: color 0.25s 0.0833333333s;
   position: relative;
   background: none;
   border: none;
-  font-weight: 700;
+  font-weight: bold;
   font-family: "Roboto Slab", sans-serif;
-  padding: 1em 2em;
+  padding: 1.1em 2em;
 }
 .highlight9::before, .highlight9::after {
   border: 0 solid transparent;
@@ -512,10 +505,10 @@
   border-right-width: 4px;
 }
 .highlight9:hover {
-  color: #0a4b38;
+  color: var(--style-color2);
 }
 .highlight9:hover::before, .highlight9:hover::after {
-  border-color: #0a4b38;
+  border-color: var(--style-color2);
   transition: border-color 0s, width 0.25s, height 0.25s;
   width: 100%;
   height: 100%;
@@ -527,18 +520,19 @@
   transition-delay: 0s, 0.25s, 0s;
 }
 .highlight9:focus {
-  outline: 2px dotted #55d7dc;
+  outline: 2px dotted var(--style-color1);
 }
 
 /*
  * highlight10
  */
 .highlight10 {
+  --style-color1: #41403e;
   font-family: "Patrick Hand SC", cursive;
   background: transparent;
-  padding: 1rem;
+  padding: 0.75em 2em;
   transition: all 0.5s ease;
-  color: #41403e;
+  color: var(--style-color1);
   letter-spacing: 1px;
   outline: none;
   box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
@@ -548,22 +542,22 @@
   box-shadow: 2px 8px 4px -6px rgba(0, 0, 0, 0.5);
 }
 .highlight10.lined.thick {
-  border: solid 5px #41403e;
+  border: solid 5px var(--style-color1);
 }
 .highlight10.dotted.thick {
-  border: dotted 5px #41403e;
+  border: dotted 5px var(--style-color1);
 }
 .highlight10.dashed.thick {
-  border: dashed 5px #41403e;
+  border: dashed 5px var(--style-color1);
 }
 .highlight10.lined.thin {
-  border: solid 2px #41403e;
+  border: solid 2px var(--style-color1);
 }
 .highlight10.dotted.thin {
-  border: dotted 2px #41403e;
+  border: dotted 2px var(--style-color1);
 }
 .highlight10.dashed.thin {
-  border: dashed 2px #41403e;
+  border: dashed 2px var(--style-color1);
 }
 
 /*
@@ -625,6 +619,9 @@
  * TwoPartsLinks_highlight1
  */
 .TwoPartsLinks_highlight1 {
+  --style-color1: #077036;
+  --style-color2: #626262;
+  --style-color3: #626262;
   padding: 10px;
 }
 .TwoPartsLinks_highlight1:hover .TwoPartsLinks_highlight1_first-word, .TwoPartsLinks_highlight1:focus .TwoPartsLinks_highlight1_first-word {
@@ -652,19 +649,19 @@
 }
 
 .TwoPartsLinks_highlight1_first-word {
-  color: #077036;
+  color: var(--style-color1);
 }
 .TwoPartsLinks_highlight1_first-word::before {
   top: 105%;
-  color: #626262;
+  color: var(--style-color2);
 }
 
 .TwoPartsLinks_highlight1_second-word {
-  color: #626262;
+  color: var(--style-color2);
 }
 .TwoPartsLinks_highlight1_second-word::before {
   bottom: 105%;
-  color: #077036;
+  color: var(--style-color1);
 }
 
 /*

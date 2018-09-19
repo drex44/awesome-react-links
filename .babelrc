@@ -1,4 +1,13 @@
 {
   "presets": ["env", "react"],
-  "plugins": ["transform-object-rest-spread", "transform-react-jsx"]
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-react-jsx",
+    [
+      "babel-plugin-styled-components",
+      {
+        "pure": true
+      }
+    ]
+  ]
 }
