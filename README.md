@@ -1,7 +1,5 @@
 # Awesome React Links ![version-1.x.x](https://img.shields.io/badge/version-1.0.0-yellow.svg) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
 
-> This is still minor version and is in development. current version is not performance efficient.
-
 A collection of animated links/ anchor tags. this can be used on any clickable element.
 
 ### Demo
