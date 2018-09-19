@@ -1,5 +1,23 @@
 # Contributions
 
+### How to setup dev environment?
+
+- clone this repo
+- run
+  ```
+  cd awesome-react-links
+  npm run dev
+  ```
+
+#### To check the results,
+
+- Get the sample demo site from [this git repo](https://github.com/drex44/demo-site-awesome-react-links).
+- run
+  ```
+  npm run dev
+  npm run start
+  ```
+
 You can contribute anyway you like. some ideas,
 
 - Update documents

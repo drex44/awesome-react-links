@@ -20,6 +20,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm link",
     "start": "webpack --watch",
     "build": "sass ./src/links.scss ./src/index.css && webpack"
   },

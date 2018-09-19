@@ -4,17 +4,17 @@
 
 A collection of animated links/ anchor tags. this can be used on any clickable element.
 
-## Demo
+### Demo
 
 - [awesome-react-links.surge.sh](https://awesome-react-links.surge.sh)
 
-## Installation
+### Installation
 
 ```
 npm install awesome-react-links
 ```
 
-## Usage
+### Usage
 
 ```javascript
 import AwesomeLinks from "awesome-react-links";
@@ -26,15 +26,15 @@ import AwesomeLinks from "awesome-react-links";
 
 check out the [demo](https://awesome-react-links.surge.sh) for all styles and how to use them!
 
-## All styles
+### All styles
 
 [Styles](STYLES.md)
 
-#### Show your support
+### Show your support
 
 :star: this repo
 
-## Contributions
+### Contributions
 
 This is my first published package in npm so if you have an improvement or suggestion,
 
@@ -44,7 +44,7 @@ This is my first published package in npm so if you have an improvement or sugge
 
 Follow the steps given [here](CONTRIBUTIONS.md) before submitting a PR.
 
-## License
+### License
 
 This repository is licensed under the MIT license. See `LICENSE` for
 details.
