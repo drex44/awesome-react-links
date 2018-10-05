@@ -39,7 +39,7 @@ This is my first published package in npm so if you have an improvement or sugge
 - Raise an issue and submit on github.
 - Create a pull request! :)
 
-check out [CONTRIBUTING.md](CONTRIBUTIONS.md) for more!
+check out [CONTRIBUTING.md](CONTRIBUTING.md) for more!
 
 ### License
 
