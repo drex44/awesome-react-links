@@ -37,10 +37,9 @@ check out the [demo](https://awesome-react-links.surge.sh) for all styles and ho
 This is my first published package in npm so if you have an improvement or suggestion,
 
 - Raise an issue and submit on github.
-- Look in the projects in github to get the ideas on ways to contribute.
 - Create a pull request! :)
 
-Follow the steps given [here](CONTRIBUTIONS.md) before submitting a PR.
+check out [CONTRIBUTING.md](CONTRIBUTIONS.md) for more!
 
 ### License
 
