@@ -1,0 +1,885 @@
+$padding: 0.75em 2em;
+
+@mixin setColor($color) {
+  color: $color;
+}
+
+/*
+ *  Highlight 1
+ */
+
+.highlight1 {
+  font-weight: bold;
+  padding: 10px 5px 2px 5px;
+  display: inline-block;
+  color: #343434;
+  transition: color 250ms, text-shadow 250ms;
+  text-decoration: none !important;
+  background: none;
+  position: relative;
+  z-index: 0;
+  &::after {
+    position: absolute;
+    z-index: -1;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: #343434;
+    transition: all 250ms;
+  }
+  &:hover {
+    color: white;
+    &::after {
+      height: 105%;
+      width: 105%;
+    }
+  }
+}
+
+/*
+ *  Highlight 2
+ */
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:900i");
+
+.highlight2 {
+  --style-color1: #6225e6;
+  --style-color2: #fbc638;
+  --style-color3: black;
+  padding: 10px 45px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  background: var(--style-color1);
+  transition: 1s;
+  box-shadow: 6px 6px 0 var(--style-color2);
+  transform: skewX(-15deg);
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    transition: 0.5s;
+    padding: 14px 47px;
+    box-shadow: 10px 10px 0px var(--style-color3);
+  }
+}
+
+/*
+ *  Highlight 3
+ */
+
+@import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:700";
+
+$font: "Source Sans Pro", sans-serif;
+$primary: #ff0072;
+$second: #644cad;
+$third: #4426a8;
+
+.highlight3 {
+  --style-color1: #ff0072;
+  font-family: $font;
+  color: var(--style-color1);
+  text-decoration: none;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s ease all;
+  &:hover {
+    color: #fff;
+  }
+  &:focus {
+    color: #fff;
+  }
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: $padding;
+  border: 3px solid var(--style-color1);
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  &:before {
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: var(--style-color1);
+    z-index: -1;
+  }
+  &:hover {
+    &:before {
+      -webkit-transition: 0.5s all ease;
+      transition: 0.5s all ease;
+      left: 0;
+      right: 0;
+      opacity: 1;
+    }
+  }
+  &:focus {
+    &:before {
+      -webkit-transition: 0.5s all ease;
+      transition: 0.5s all ease;
+      left: 0;
+      right: 0;
+      opacity: 1;
+    }
+  }
+}
+
+/*
+ *  Highlight 4
+ */
+
+@keyframes sheen {
+  0% {
+    transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    transform: skewY(-45deg) translateX(12.5em);
+  }
+}
+$color: #2194e0;
+
+.highlight4 {
+  --style-color1: rgb(25, 119, 181);
+  filter: brightness(90%);
+  padding: $padding;
+  text-align: center;
+  text-decoration: none;
+  color: var(--style-color1);
+  border: 2px solid var(--style-color1);
+  display: inline-block;
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: "";
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 100%;
+    width: 3em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4.5em;
+    transform: skewX(-45deg) translateX(0);
+    transition: none;
+  }
+  &:hover {
+    background-color: var(--style-color1);
+    color: #fff;
+    border-bottom: 4px solid var(--style-color1);
+    &:before {
+      transform: skewX(-45deg) translateX(13.5em);
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}
+
+/*
+ *  Highlight 5
+ */
+
+@import "https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";
+
+$highlight5-border-color: rgba(255, 0, 0, 0.3);
+
+.highlight5 {
+  --style-color1: #5e5e5e;
+  --style-color2: rgba(255, 0, 0, 0.3);
+  font-family: "Open Sans Condensed", sans-serif;
+  padding: $padding;
+  text-align: center;
+
+  /* 
+  ========================
+        BUTTON ONE
+  ========================
+  */
+  &.btn-one {
+    background-color: var(--style-color1);
+    color: #fff;
+    transition: all 0.3s;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      transition: all 0.3s;
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+      border-top-style: solid;
+      border-bottom-style: solid;
+      border-top-color: $highlight5-border-color;
+      border-bottom-color: $highlight5-border-color;
+      transform: scale(0.1, 1);
+    }
+    &:hover::before {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      transition: all 0.3s;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    &:hover::after {
+      opacity: 0;
+      transform: scale(0.1, 1);
+    }
+  }
+
+  /* 
+  ========================
+        BUTTON TWO
+  ========================
+  */
+  color: rgba(255, 255, 255, 0.5);
+  background-color: var(--style-color1);
+  transition: all 0.5s;
+  position: relative;
+  z-index: 2;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s;
+    border: 1px solid var(--style-color2);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s;
+    border: 1px solid var(--style-color2);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  &:hover::before {
+    transform: rotate(-45deg);
+    background-color: rgba(255, 255, 255, 0);
+  }
+  &:hover::after {
+    transform: rotate(45deg);
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  /* 
+  ========================
+        BUTTON THREE
+  ========================
+  */
+  &.btn-three {
+    color: #fff;
+    background-color: #818181;
+    transition: all 0.5s;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: all 0.3s;
+    }
+    &:hover::before {
+      opacity: 0;
+      transform: scale(0.5, 0.5);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      transition: all 0.3s;
+      border: 1px solid $highlight5-border-color;
+      transform: scale(1.2, 1.2);
+    }
+    &:hover::after {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+  }
+}
+
+/*
+ *  Highlight 6
+ */
+
+$brand-color: #343434;
+$brand-color-dark: darken($brand-color, 40%);
+
+.highlight6 {
+  --style-color1: #343434;
+  color: $brand-color;
+  text-decoration: none;
+  position: relative;
+  padding: 0 0.2em 0.6em 0.2em;
+  &.left {
+    &::after {
+      transform: translateX(-100%) scaleX(0);
+      background-color: var(--style-color1);
+    }
+  }
+  &.center {
+    &::after {
+      transform: translateX(-50%) scaleX(0);
+      background-color: var(--style-color1);
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    width: 100%;
+    height: 3px;
+    transform: translateX(-100%) scaleX(0);
+    background-color: var(--style-color1);
+    transition: transform 250ms;
+  }
+  &:hover {
+    &::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+  }
+  .social-media-list &:hover {
+    text-decoration: none;
+  }
+}
+
+/*
+ *  Highlight 7
+ */
+
+.highlight7 {
+  --style-color1: #0b7;
+  --style-color2: black;
+  padding: $padding;
+  font-family: sans-serif;
+  text-decoration: none;
+  position: relative;
+  vertical-align: middle;
+  color: #0b7;
+  display: inline-block;
+  text-align: center;
+  transition: 0.5s;
+  cursor: pointer;
+  border: 2px solid var(--style-color1);
+  -webkit-transition: 0.5s;
+
+  &.corners::before {
+    border-bottom: 3px solid var(--style-color2);
+    border-left: 3px solid var(--style-color2);
+    -webkit-transform-origin: 0 100%;
+  }
+
+  &.corners::after {
+    border-top: 3px solid var(--style-color2);
+    border-right: 3px solid var(--style-color2);
+    -webkit-transform-origin: 100% 0%;
+  }
+
+  &.cross-corners::before {
+    border-bottom: 3px solid var(--style-color2);
+    border-left: 3px solid var(--style-color2);
+    -webkit-transform-origin: 100% 0%;
+  }
+
+  &.cross-corners::after {
+    border-top: 3px solid var(--style-color2);
+    border-right: 3px solid var(--style-color2);
+    -webkit-transform-origin: 0% 100%;
+  }
+
+  &.underline::before {
+    border-bottom: 3px solid var(--style-color2);
+    border-left: 0;
+    -webkit-transform-origin: 0% 100%;
+  }
+
+  &.underline::after {
+    border-top: 0;
+    border-right: 0;
+    -webkit-transform-origin: 50% 50%;
+  }
+
+  &:hover {
+    border: 2px solid rgba(0, 160, 80, 0);
+    color: black;
+  }
+  &::before,
+  &::after {
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    -webkit-transform: scale(0);
+    transition: 0.5s;
+  }
+  &:hover::after,
+  &:hover::before {
+    -webkit-transform: scale(1);
+  }
+}
+
+/*
+ *  Highlight 8
+ */
+
+$colors: (
+  pulse: #19bc8b,
+  raise: #19bc8b,
+  offset: #19bc8b
+);
+
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 45deg)};
+  }
+}
+
+.highlight8 {
+  --style-color1: #19bc8b;
+  --style-color2: #1937bc;
+  color: var(--color);
+  transition: 0.25s;
+  text-decoration: none;
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: $padding;
+  border-color: var(--style-color1);
+
+  &:hover,
+  &:focus {
+    border-color: var(--style-color2);
+    color: var(--style-color2);
+  }
+  // Size can also be negative; see how it's smaller than the element
+  &.raise:hover,
+  &.raise:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--style-color2);
+    transform: translateY(-0.25em);
+  }
+
+  // Animate the size, outside
+  &.pulse:hover,
+  &.pulse:focus {
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em rgba(#fff, 0);
+  }
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 var(--style-color1);
+    }
+  }
+
+  // Multiple shadows, one on the outside, another on the inside
+  &.offset {
+    box-shadow: 0.3em 0.3em 0 0 var(--style-color1),
+      inset 0.3em 0.3em 0 0 var(--style-color1);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 0 0 var(--style-color2),
+        inset 6em 3.5em 0 0 var(--style-color2);
+      color: white;
+    }
+  }
+}
+
+/*
+ * Highlight 9
+ */
+
+@mixin highlight9-border-drawing(
+  $color: #19bc8b,
+  $hover: #1937bc,
+  $width: 2px,
+  $vertical: top,
+  $horizontal: left,
+  $duration: 0.25s
+) {
+  text-decoration: none;
+  box-shadow: inset 0 0 0 $width $color;
+  color: $color;
+  transition: color $duration $duration/3;
+  position: relative;
+
+  &::before,
+  &::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+
+    #{$vertical}: 0;
+    #{$horizontal}: 0;
+  }
+
+  &::before {
+    $h-side: if($horizontal == "left", "right", "left");
+    border-#{$vertical}-width: $width;
+    border-#{$h-side}-width: $width;
+  }
+
+  &::after {
+    $v-side: if($vertical == "top", "bottom", "top");
+    border-#{$v-side}-width: $width;
+    border-#{$horizontal}-width: $width;
+  }
+
+  &:hover {
+    color: $hover;
+
+    &::before,
+    &::after {
+      border-color: $hover;
+      transition: border-color 0s, width $duration, height $duration;
+      width: 100%;
+      height: 100%;
+    }
+
+    &::before {
+      transition-delay: 0s, 0s, $duration;
+    }
+
+    &::after {
+      transition-delay: 0s, $duration, 0s;
+    }
+  }
+}
+
+.highlight9 {
+  --style-color1: #58afd1;
+  --style-color2: #256a85;
+  @include highlight9-border-drawing(
+    var(--style-color1),
+    var(--style-color2),
+    4px,
+    bottom,
+    right
+  );
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-family: "Roboto Slab", sans-serif;
+  padding: 1.1em 2em;
+
+  &:focus {
+    outline: 2px dotted var(--style-color1);
+  }
+}
+
+/*
+ * highlight10
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+
+.highlight10 {
+  --style-color1: #41403e;
+  font-family: "Patrick Hand SC", cursive;
+  background: transparent;
+  padding: $padding;
+  transition: all 0.5s ease;
+  color: var(--style-color1);
+  letter-spacing: 1px;
+  outline: none;
+  box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  &:hover {
+    box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, 0.5);
+  }
+  &.lined.thick {
+    border: solid 5px var(--style-color1);
+  }
+  &.dotted.thick {
+    border: dotted 5px var(--style-color1);
+  }
+  &.dashed.thick {
+    border: dashed 5px var(--style-color1);
+  }
+  &.lined.thin {
+    border: solid 2px var(--style-color1);
+  }
+  &.dotted.thin {
+    border: dotted 2px var(--style-color1);
+  }
+  &.dashed.thin {
+    border: dashed 2px var(--style-color1);
+  }
+}
+
+/*
+ *  Highlight x1
+ */
+
+// Variables
+$blue: #15b5e2;
+$btn-bg: #10131c;
+
+.btn-wrapper {
+  width: 290px;
+  height: 110px;
+
+  &:hover {
+    .btn-inner {
+      top: -4px;
+      transform: scale(1, 1);
+      cursor: pointer;
+    }
+  }
+
+  &__container {
+    border-bottom: 2px solid $blue;
+    position: absolute;
+    width: 100%;
+    height: 80px;
+
+    &:before,
+    &:after {
+      border-bottom: 2px solid $blue;
+      width: 96%;
+      left: 2%;
+      bottom: -8px;
+      content: "";
+      position: absolute;
+    }
+
+    &:after {
+      width: 92%;
+      left: 4%;
+      bottom: -14px;
+    }
+
+    .btn-inner {
+      width: 104.2%;
+      height: 100%;
+      position: absolute;
+      top: 20px;
+      left: -2.1%;
+      border: 2px solid $blue;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Source Code Pro", monospace;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: $btn-bg;
+      transform: scale(0.96, 0.96);
+      transition: all 0.3s;
+      z-index: 4;
+
+      .highlightx1 {
+        text-decoration: none;
+        color: $blue;
+      }
+    }
+  }
+}
+
+/*
+ * TwoPartsLinks_highlight1
+ */
+
+$color-primary: #077036;
+$color-secondary: #626262;
+$color-border: black;
+
+.TwoPartsLinks_highlight1 {
+  --style-color1: #077036;
+  --style-color2: #626262;
+  --style-color3: #626262;
+
+  padding: 10px;
+  &:hover,
+  &:focus {
+    .TwoPartsLinks_highlight1_first-word {
+      transform: translate3d(0, -105%, 0);
+    }
+
+    .TwoPartsLinks_highlight1_second-word {
+      transform: translate3d(0, 105%, 0);
+    }
+  }
+}
+
+.TwoPartsLinks_highlight1_title {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.TwoPartsLinks_highlight1_first-word,
+.TwoPartsLinks_highlight1_second-word {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.3s;
+
+  &::before {
+    position: absolute;
+    content: attr(data-hover);
+  }
+}
+
+.TwoPartsLinks_highlight1_first-word {
+  color: var(--style-color1);
+
+  &::before {
+    top: 105%;
+    color: var(--style-color2);
+  }
+}
+
+.TwoPartsLinks_highlight1_second-word {
+  color: var(--style-color2);
+
+  &::before {
+    bottom: 105%;
+    color: var(--style-color1);
+  }
+}
+
+/*
+ * TwoPartsLinks_highlight2
+ */
+
+@import url("https://fonts.googleapis.com/css?family=Dosis");
+
+// Mixin for easier colors
+@mixin TwoPartsLinks_highlight2($color) {
+  font-family: "Dosis";
+  .social-cube {
+    .front,
+    .back {
+      background: $color;
+    }
+    .bottom {
+      background: darken($color, 10%);
+    }
+  }
+  &:hover .social-cube {
+    .bottom {
+      background: $color;
+    }
+    .front {
+      background: lighten($color, 10%);
+    }
+  }
+}
+
+// Social container styles
+.TwoPartsLinks_highlight2 {
+  position: relative;
+  display: inline-block;
+  width: 164px;
+  height: 36px;
+  perspective: 300px;
+  margin: 8px;
+  .social-cube {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.333s;
+    transform: translateZ(-18px);
+    .front,
+    .bottom {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      transition: background 0.333s;
+    }
+    .front {
+      transform: rotateX(0deg) translateZ(18px);
+    }
+    .bottom {
+      transform: rotateX(-90deg) translateZ(18px);
+    }
+  }
+
+  &:hover .social-cube {
+    transform: translateZ(-18px) rotateX(90deg);
+  }
+}
+
+// Custom colors
+$twitter-blue: #4099ff;
+$facebook-blue: #3b5998;
+$youtube-red: #cc181e;
+$github-gray: #767676;
+$dribbble-pink: #ea4c89;
+$codepen-gray: #191919;
+
+.TwoPartsLinks_highlight2 {
+  &.twitter {
+    @include TwoPartsLinks_highlight2($twitter-blue);
+  }
+  &.facebook {
+    @include TwoPartsLinks_highlight2($facebook-blue);
+  }
+  &.youtube {
+    @include TwoPartsLinks_highlight2($youtube-red);
+  }
+  &.github {
+    @include TwoPartsLinks_highlight2($github-gray);
+  }
+  &.dribbble {
+    @include TwoPartsLinks_highlight2($dribbble-pink);
+  }
+  &.codepen {
+    @include TwoPartsLinks_highlight2($codepen-gray);
+  }
+}
