@@ -805,4 +805,52 @@
   background: #333333;
 }
 
+/*
+ *  Rotate_text
+ */
+ 
+ .Rotate_text:before {
+  content:'';
+  display:inline-block;;
+  vertical-align:middle;
+  padding-top:100%;
+}
+.Rotate_text {
+  min-width: 60px;
+  max-width: 120px;
+  min-height: 60px;
+  max-height: 120px;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  border: 2px solid #f5f5f5;
+  color: white;
+  background-color:  #a00116;
+  border-radius: 100%;
+  overflow: none;
+  text-align: center;
+  padding:0px;
+  box-shadow: 0 0 3px #a00116;
+  font-size:12px;
+  font-weight:bold; 
+  transition        : 1.0s ease all;
+	-moz-transition   : 1.0s ease all;
+	-webkit-transition: 1.0s ease all;
+}
+.Rotate_text:hover {
+  transform               : rotate(360deg);
+	-moz-transform          : rotate(360deg);
+	-webkit-transform       : rotate(360deg);
+	transform-origin        : center;
+	-moz-transform-origin   : center;
+	-webkit-transform-origin: center;
+}
+.Rotate_text_Span {
+  display:inline-block;
+  vertical-align:middle;
+  max-width:90%;
+  color : white;
+}
+
 /*# sourceMappingURL=index.css.map */
