@@ -151,10 +151,12 @@ export class TwoPartsLinks extends React.Component {
 
 export class RotateText extends React.Component {
   render() {
-    <a class="Rotate_text" href={this.props.href}>
-      <span class="Rotate_text_Span">
-        {this.props.children}
+    return (
+      <a class="Rotate_text" href={this.props.href}>
+        <span class="Rotate_text_Span">
+          {this.props.children}
         </span>
-    </a>
+      </a>
+    )
   }
 }
