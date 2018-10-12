@@ -15,7 +15,7 @@
 - run
   ```
   npm run dev
-  npm run start
+  npm start
   ```
 
 You can contribute anyway you like. some ideas,
