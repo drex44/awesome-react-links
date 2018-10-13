@@ -89,6 +89,12 @@ const customStyles = (linkstyle, styles) => {
       }
       break;
     }
+    case "highlight11": {
+      if (styles.color1) {
+        newStyles["--style-color1"] = styles.color1;
+      }
+    }
+    break;
   }
   if (linkstyle.includes("highlight6")) {
     if (styles.color1) {
