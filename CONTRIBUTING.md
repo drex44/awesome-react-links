@@ -6,7 +6,7 @@
 - run
   ```
   cd awesome-react-links
-  npm run dev
+  npm run build
   ```
 
 #### To check the results,
@@ -15,7 +15,7 @@
 - run
   ```
   npm run dev
-  npm run start
+  npm start
   ```
 
 You can contribute anyway you like. some ideas,

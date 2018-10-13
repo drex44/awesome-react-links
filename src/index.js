@@ -89,6 +89,12 @@ const customStyles = (linkstyle, styles) => {
       }
       break;
     }
+    case "highlight11": {
+      if (styles.color1) {
+        newStyles["--style-color1"] = styles.color1;
+      }
+    }
+    break;
   }
   if (linkstyle.includes("highlight6")) {
     if (styles.color1) {
@@ -149,6 +155,18 @@ export class TwoPartsLinks extends React.Component {
   }
 }
 
+export class RotateText extends React.Component {
+  render() {
+    return (
+      <a class="Rotate_text" href={this.props.href}>
+        <span class="Rotate_text_Span">
+          {this.props.children}
+        </span>
+      </a>
+    )
+  }
+}
+
 export class FlipButton extends React.Component {
   render() {
     return (
@@ -158,6 +176,6 @@ export class FlipButton extends React.Component {
               <button class="Flip_back_button" > {this.props.children}</button>
           </a>   
       </div>
-    )
+      )
   }
 }

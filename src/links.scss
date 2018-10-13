@@ -655,6 +655,75 @@ $colors: (
 }
 
 /*
+ *  Highlight 11 iteraction push
+ */
+
+ @import url('https://fonts.googleapis.com/css?family=Lato');
+
+//  variable
+$color-primary: #58afd1;
+$color-white: #fff;
+
+.highlight11 {
+  --style-color1: #58afd1;
+  &,
+  &:link,
+  &:visited {
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    text-decoration: nonde;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+    font-size: 16px;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(#222, .2);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 10px rgba(#222, .2);
+  }
+
+  &--blue {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+        background-color: $color-primary;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+  }
+  
+
+}
+
+/*
  *  Highlight x1
  */
 
@@ -883,6 +952,61 @@ $codepen-gray: #191919;
     @include TwoPartsLinks_highlight2($codepen-gray);
   }
 }
+
+/*
+ *  Rotate_text
+ */
+ 
+ $color_1: white;
+$background_color_1: #a00116;
+
+.Rotate_text {
+	&:before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		padding-top: 100%;
+	}
+	min-width: 60px;
+	max-width: 120px;
+	min-height: 60px;
+	max-height: 120px;
+	text-decoration: none;
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	border: 2px solid #f5f5f5;
+	color: $color_1;
+	background-color: $background_color_1;
+	border-radius: 100%;
+	overflow: none;
+	text-align: center;
+	padding: 0px;
+	box-shadow: 0 0 3px #a00116;
+	font-size: 12px;
+	font-weight: bold;
+	transition: 1.0s ease all;
+	-moz-transition: 1.0s ease all;
+	-webkit-transition: 1.0s ease all;
+	&:hover {
+		transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform-origin: center;
+		-moz-transform-origin: center;
+		-webkit-transform-origin: center;
+	}
+}
+.Rotate_text_Span {
+	display: inline-block;
+	vertical-align: middle;
+  max-width: 90%;
+  color:$color_1;
+}
+
+/*
+ *  Button_Flip
+ */
 
 $flipbutton_color_1: #fff;
 $flipbutton_background_color_1: #ff0066;

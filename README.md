@@ -36,10 +36,10 @@ check out the [demo](https://awesome-react-links.surge.sh) for all styles and ho
 
 This is my first published package in npm so if you have an improvement or suggestion,
 
-- Raise an issue and submit on github.
+- Raise an issue for suggestion or improvements
 - Create a pull request! :)
 
-check out [CONTRIBUTING.md](CONTRIBUTING.md) for more!
+Check out [how to setup development envrionment](https://github.com/drex44/awesome-react-links/blob/master/CONTRIBUTING.md) for more!
 
 ### License
 
