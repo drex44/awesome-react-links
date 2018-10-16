@@ -724,6 +724,52 @@ $color-white: #fff;
 }
 
 /*
+ * highlight12
+ */
+
+ @import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+
+ .highlight13 {
+   --style-color1: #000000;
+   --style-color2: #fdf3a7;
+   --style-color3: #bcf2fd;
+   --style-color4: #c0fcab;
+   --style-color5: #f6c9c8;
+   --style-color6: #b9cafb;
+   --style-color7: #eeeeee;
+   
+   text-decoration: none;
+   font-family: "Patrick Hand SC", cursive;
+   padding: $padding;
+   transition: all 0.5s ease;
+   color: var(--style-color1);
+   letter-spacing: 1px;
+   outline: none;
+   box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, 0.2);
+   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+   &:hover {
+     box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, 0.5);
+   }
+   &.yellow {
+     background: var(--style-color2);
+   }
+   &.blue {
+    background: var(--style-color3);
+   }
+   &.green {
+    background: var(--style-color4);
+   }
+   &.pink {
+    background: var(--style-color5);
+   }
+   &.purple {
+    background: var(--style-color6);
+   }
+   &.grey {
+    background: var(--style-color7);
+   }
+ }
+/*
  *  Highlight x1
  */
 
