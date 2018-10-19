@@ -852,5 +852,50 @@
   max-width:90%;
   color : white;
 }
+/*
+ * FlipButton
+ */
+
+.Button_flip_container {
+ 
+  align-items: center;
+  justify-content: center;
+ 
+}
+.Button_flip_container .Button_flip {
+  transition: 0.8s cubic-bezier(0.775, 0.07, 0.575, 0.995);
+  transform-style: preserve-3d;
+  position: absolute;
+}
+.Button_flip_container .Button_flip:hover {
+  transform: rotateX(180deg);
+}
+.Button_flip_container .Flip_front_button {
+  cursor: pointer;
+  width: 200px;
+  height: 60px;
+  background-color: #ff0066;
+  border: none;
+  font-size: 2em;
+  color: #fff;
+  backface-visibility: hidden;
+  z-index: 2;
+  transform: rotateX(0deg);
+  position: absolute;
+  box-shadow: 0px 8px 12px #ccc;
+}
+.Button_flip_container .Flip_back_button {
+  cursor: pointer;
+  width: 200px;
+  height: 60px;
+  background-color:#cc0066;
+  border: none;
+  font-size: 2em;
+  color: #fff;
+  backface-visibility: hidden;
+  transform: rotateX(-180deg);
+  position: relative;
+  box-shadow: 0px 8px 12px #ccc;
+}
 
 /*# sourceMappingURL=index.css.map */

@@ -166,3 +166,16 @@ export class RotateText extends React.Component {
     )
   }
 }
+
+export class FlipButton extends React.Component {
+  render() {
+    return (
+     <div class="Button_flip_container">   
+          <a class="Button_flip"  href={this.props.href}>
+              <button class="Flip_front_button"> {this.props.children}</button>
+              <button class="Flip_back_button" > {this.props.children}</button>
+          </a>   
+      </div>
+      )
+  }
+}
