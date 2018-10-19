@@ -73,7 +73,7 @@ module.exports =
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function(global) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return flush; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "flush", function() { return flush; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hydrate", function() { return hydrate; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cx", function() { return cx; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "merge", function() { return merge; });
@@ -102,7 +102,6 @@ var _createEmotion = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_create_em
 
 
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(15)))
 
 /***/ }),
 /* 1 */
@@ -123,13 +122,13 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(12)(content, options);
+var update = __webpack_require__(10)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {
-	module.hot.accept("!!../node_modules/css-loader/index.js!./index.css", function() {
-		var newContent = require("!!../node_modules/css-loader/index.js!./index.css");
+	module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/lib/loader.js!./links.scss", function() {
+		var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/lib/loader.js!./links.scss");
 
 		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 
@@ -285,7 +284,7 @@ var unitlessKeys = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.TwoPartsLinks = undefined;
+exports.FlipButton = exports.RotateText = exports.TwoPartsLinks = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -304,6 +303,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+if (typeof window == "undefined") {
+  window = new Object();
+}
 
 var AwesomeLinks = function (_React$Component) {
   _inherits(AwesomeLinks, _React$Component);
@@ -410,6 +413,13 @@ var customStyles = function customStyles(linkstyle, styles) {
         }
         break;
       }
+    case "highlight11":
+      {
+        if (styles.color1) {
+          newStyles["--style-color1"] = styles.color1;
+        }
+      }
+      break;
   }
   if (linkstyle.includes("highlight6")) {
     if (styles.color1) {
@@ -496,16 +506,81 @@ var TwoPartsLinks = exports.TwoPartsLinks = function (_React$Component2) {
   return TwoPartsLinks;
 }(_react2.default.Component);
 
+var RotateText = exports.RotateText = function (_React$Component3) {
+  _inherits(RotateText, _React$Component3);
+
+  function RotateText() {
+    _classCallCheck(this, RotateText);
+
+    return _possibleConstructorReturn(this, (RotateText.__proto__ || Object.getPrototypeOf(RotateText)).apply(this, arguments));
+  }
+
+  _createClass(RotateText, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "a",
+        { "class": "Rotate_text", href: this.props.href },
+        _react2.default.createElement(
+          "span",
+          { "class": "Rotate_text_Span" },
+          this.props.children
+        )
+      );
+    }
+  }]);
+
+  return RotateText;
+}(_react2.default.Component);
+
+var FlipButton = exports.FlipButton = function (_React$Component4) {
+  _inherits(FlipButton, _React$Component4);
+
+  function FlipButton() {
+    _classCallCheck(this, FlipButton);
+
+    return _possibleConstructorReturn(this, (FlipButton.__proto__ || Object.getPrototypeOf(FlipButton)).apply(this, arguments));
+  }
+
+  _createClass(FlipButton, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { "class": "Button_flip_container" },
+        _react2.default.createElement(
+          "a",
+          { "class": "Button_flip", href: this.props.href },
+          _react2.default.createElement(
+            "button",
+            { "class": "Flip_front_button" },
+            " ",
+            this.props.children
+          ),
+          _react2.default.createElement(
+            "button",
+            { "class": "Flip_back_button" },
+            " ",
+            this.props.children
+          )
+        )
+      );
+    }
+  }]);
+
+  return FlipButton;
+}(_react2.default.Component);
+
 /***/ }),
 /* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__emotion_memoize__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__emotion_memoize__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__emotion_unitless__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__emotion_hash__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__emotion_stylis__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_stylis_rule_sheet__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_stylis_rule_sheet__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_stylis_rule_sheet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_stylis_rule_sheet__);
 
 
@@ -1028,7 +1103,6 @@ function createEmotion(context, options) {
 /* harmony default export */ __webpack_exports__["a"] = (createEmotion);
 //# sourceMappingURL=index.esm.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(11)))
 
 /***/ }),
 /* 8 */
@@ -1671,294 +1745,18 @@ var W = function da(X) {
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(10)(false);
+exports = module.exports = __webpack_require__(13)(false);
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Poppins:900i);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Dosis);", ""]);
+
 
 // module
-exports.push([module.i, "/*\n *  Highlight 1\n */\n.highlight1 {\n  font-weight: bold;\n  padding: 10px 5px 2px 5px;\n  display: inline-block;\n  color: #343434;\n  transition: color 250ms, text-shadow 250ms;\n  text-decoration: none !important;\n  background: none;\n  position: relative;\n  z-index: 0;\n}\n.highlight1::after {\n  position: absolute;\n  z-index: -1;\n  bottom: -5px;\n  left: 50%;\n  transform: translateX(-50%);\n  content: \"\";\n  width: 100%;\n  height: 3px;\n  background-color: #343434;\n  transition: all 250ms;\n}\n.highlight1:hover {\n  color: white;\n}\n.highlight1:hover::after {\n  height: 105%;\n  width: 105%;\n}\n\n/*\n *  Highlight 2\n */\n.highlight2 {\n  --style-color1: #6225e6;\n  --style-color2: #fbc638;\n  --style-color3: black;\n  padding: 10px 45px;\n  text-decoration: none;\n  font-family: \"Poppins\", sans-serif;\n  color: white;\n  background: var(--style-color1);\n  transition: 1s;\n  box-shadow: 6px 6px 0 var(--style-color2);\n  transform: skewX(-15deg);\n}\n.highlight2:focus {\n  outline: none;\n}\n.highlight2:hover {\n  transition: 0.5s;\n  padding: 14px 47px;\n  box-shadow: 10px 10px 0px var(--style-color3);\n}\n\n/*\n *  Highlight 3\n */\n.highlight3 {\n  --style-color1: #ff0072;\n  font-family: \"Source Sans Pro\", sans-serif;\n  color: var(--style-color1);\n  text-decoration: none;\n  -webkit-transition: 0.3s all ease;\n  transition: 0.3s ease all;\n  text-transform: uppercase;\n  display: inline-block;\n  text-align: center;\n  font-weight: bold;\n  padding: 0.75em 2em;\n  border: 3px solid var(--style-color1);\n  border-radius: 4px;\n  position: relative;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);\n  z-index: 2;\n}\n.highlight3:hover {\n  color: #fff;\n}\n.highlight3:focus {\n  color: #fff;\n}\n.highlight3:before {\n  -webkit-transition: 0.5s all ease;\n  transition: 0.5s all ease;\n  position: absolute;\n  top: 0;\n  left: 50%;\n  right: 50%;\n  bottom: 0;\n  opacity: 0;\n  content: \"\";\n  background-color: var(--style-color1);\n  z-index: -1;\n}\n.highlight3:hover:before {\n  -webkit-transition: 0.5s all ease;\n  transition: 0.5s all ease;\n  left: 0;\n  right: 0;\n  opacity: 1;\n}\n.highlight3:focus:before {\n  -webkit-transition: 0.5s all ease;\n  transition: 0.5s all ease;\n  left: 0;\n  right: 0;\n  opacity: 1;\n}\n\n/*\n *  Highlight 4\n */\n@keyframes sheen {\n  0% {\n    transform: skewY(-45deg) translateX(0);\n  }\n  100% {\n    transform: skewY(-45deg) translateX(12.5em);\n  }\n}\n.highlight4 {\n  --style-color1: rgb(25, 119, 181);\n  filter: brightness(90%);\n  padding: 0.75em 2em;\n  text-align: center;\n  text-decoration: none;\n  color: var(--style-color1);\n  border: 2px solid var(--style-color1);\n  display: inline-block;\n  border-radius: 0.3em;\n  transition: all 0.2s ease-in-out;\n  position: relative;\n  overflow: hidden;\n}\n.highlight4:before {\n  content: \"\";\n  background-color: rgba(255, 255, 255, 0.5);\n  height: 100%;\n  width: 3em;\n  display: block;\n  position: absolute;\n  top: 0;\n  left: -4.5em;\n  transform: skewX(-45deg) translateX(0);\n  transition: none;\n}\n.highlight4:hover {\n  background-color: var(--style-color1);\n  color: #fff;\n  border-bottom: 4px solid var(--style-color1);\n}\n.highlight4:hover:before {\n  transform: skewX(-45deg) translateX(13.5em);\n  transition: all 0.5s ease-in-out;\n}\n\n/*\n *  Highlight 5\n */\n.highlight5 {\n  --style-color1: #5e5e5e;\n  --style-color2: rgba(255, 0, 0, 0.3);\n  font-family: \"Open Sans Condensed\", sans-serif;\n  padding: 0.75em 2em;\n  text-align: center;\n  /* \n  ========================\n        BUTTON ONE\n  ========================\n  */\n  /* \n  ========================\n        BUTTON TWO\n  ========================\n  */\n  color: rgba(255, 255, 255, 0.5);\n  background-color: var(--style-color1);\n  transition: all 0.5s;\n  position: relative;\n  z-index: 2;\n  /* \n  ========================\n        BUTTON THREE\n  ========================\n  */\n}\n.highlight5.btn-one {\n  background-color: var(--style-color1);\n  color: #fff;\n  transition: all 0.3s;\n  position: relative;\n}\n.highlight5.btn-one::before {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 1;\n  opacity: 0;\n  transition: all 0.3s;\n  border-top-width: 1px;\n  border-bottom-width: 1px;\n  border-top-style: solid;\n  border-bottom-style: solid;\n  border-top-color: rgba(255, 0, 0, 0.3);\n  border-bottom-color: rgba(255, 0, 0, 0.3);\n  transform: scale(0.1, 1);\n}\n.highlight5.btn-one:hover::before {\n  opacity: 1;\n  transform: scale(1, 1);\n}\n.highlight5.btn-one::after {\n  content: \"\";\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  z-index: 1;\n  transition: all 0.3s;\n  background-color: rgba(255, 255, 255, 0.1);\n}\n.highlight5.btn-one:hover::after {\n  opacity: 0;\n  transform: scale(0.1, 1);\n}\n.highlight5::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 1;\n  transition: all 0.5s;\n  border: 1px solid var(--style-color2);\n  background-color: rgba(255, 255, 255, 0.1);\n}\n.highlight5::after {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 1;\n  transition: all 0.5s;\n  border: 1px solid var(--style-color2);\n  background-color: rgba(255, 255, 255, 0.1);\n}\n.highlight5:hover::before {\n  transform: rotate(-45deg);\n  background-color: rgba(255, 255, 255, 0);\n}\n.highlight5:hover::after {\n  transform: rotate(45deg);\n  background-color: rgba(255, 255, 255, 0);\n}\n.highlight5.btn-three {\n  color: #fff;\n  background-color: #818181;\n  transition: all 0.5s;\n  position: relative;\n}\n.highlight5.btn-three::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 1;\n  background-color: rgba(255, 255, 255, 0.1);\n  transition: all 0.3s;\n}\n.highlight5.btn-three:hover::before {\n  opacity: 0;\n  transform: scale(0.5, 0.5);\n}\n.highlight5.btn-three::after {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 1;\n  opacity: 0;\n  transition: all 0.3s;\n  border: 1px solid rgba(255, 0, 0, 0.3);\n  transform: scale(1.2, 1.2);\n}\n.highlight5.btn-three:hover::after {\n  opacity: 1;\n  transform: scale(1, 1);\n}\n\n/*\n *  Highlight 6\n */\n.highlight6 {\n  --style-color1: #343434;\n  color: #343434;\n  text-decoration: none;\n  position: relative;\n  padding: 0 0.2em 0.6em 0.2em;\n}\n.highlight6.left::after {\n  transform: translateX(-100%) scaleX(0);\n  background-color: var(--style-color1);\n}\n.highlight6.center::after {\n  transform: translateX(-50%) scaleX(0);\n  background-color: var(--style-color1);\n}\n.highlight6::after {\n  content: \"\";\n  position: absolute;\n  left: 50%;\n  bottom: 5px;\n  width: 100%;\n  height: 3px;\n  transform: translateX(-100%) scaleX(0);\n  background-color: var(--style-color1);\n  transition: transform 250ms;\n}\n.highlight6:hover::after {\n  transform: translateX(-50%) scaleX(1);\n}\n.social-media-list .highlight6:hover {\n  text-decoration: none;\n}\n\n/*\n *  Highlight 7\n */\n.highlight7 {\n  --style-color1: #0b7;\n  --style-color2: black;\n  padding: 0.75em 2em;\n  font-family: sans-serif;\n  text-decoration: none;\n  position: relative;\n  vertical-align: middle;\n  color: #0b7;\n  display: inline-block;\n  text-align: center;\n  transition: 0.5s;\n  cursor: pointer;\n  border: 2px solid var(--style-color1);\n  -webkit-transition: 0.5s;\n}\n.highlight7.corners::before {\n  border-bottom: 3px solid var(--style-color2);\n  border-left: 3px solid var(--style-color2);\n  -webkit-transform-origin: 0 100%;\n}\n.highlight7.corners::after {\n  border-top: 3px solid var(--style-color2);\n  border-right: 3px solid var(--style-color2);\n  -webkit-transform-origin: 100% 0%;\n}\n.highlight7.cross-corners::before {\n  border-bottom: 3px solid var(--style-color2);\n  border-left: 3px solid var(--style-color2);\n  -webkit-transform-origin: 100% 0%;\n}\n.highlight7.cross-corners::after {\n  border-top: 3px solid var(--style-color2);\n  border-right: 3px solid var(--style-color2);\n  -webkit-transform-origin: 0% 100%;\n}\n.highlight7.underline::before {\n  border-bottom: 3px solid var(--style-color2);\n  border-left: 0;\n  -webkit-transform-origin: 0% 100%;\n}\n.highlight7.underline::after {\n  border-top: 0;\n  border-right: 0;\n  -webkit-transform-origin: 50% 50%;\n}\n.highlight7:hover {\n  border: 2px solid rgba(0, 160, 80, 0);\n  color: black;\n}\n.highlight7::before, .highlight7::after {\n  width: 100%;\n  height: 100%;\n  z-index: 3;\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  box-sizing: border-box;\n  -webkit-transform: scale(0);\n  transition: 0.5s;\n}\n.highlight7:hover::after, .highlight7:hover::before {\n  -webkit-transform: scale(1);\n}\n\n/*\n *  Highlight 8\n */\n.pulse {\n  --color: #19bc8b;\n  --hover: #1973bc;\n}\n\n.raise {\n  --color: #19bc8b;\n  --hover: #1973bc;\n}\n\n.offset {\n  --color: #19bc8b;\n  --hover: #1973bc;\n}\n\n.highlight8 {\n  --style-color1: #19bc8b;\n  --style-color2: #1937bc;\n  color: var(--color);\n  transition: 0.25s;\n  text-decoration: none;\n  background: none;\n  border: 2px solid;\n  font: inherit;\n  line-height: 1;\n  margin: 0.5em;\n  padding: 0.75em 2em;\n  border-color: var(--style-color1);\n}\n.highlight8:hover, .highlight8:focus {\n  border-color: var(--style-color2);\n  color: var(--style-color2);\n}\n.highlight8.raise:hover, .highlight8.raise:focus {\n  box-shadow: 0 0.5em 0.5em -0.4em var(--style-color2);\n  transform: translateY(-0.25em);\n}\n.highlight8.pulse:hover, .highlight8.pulse:focus {\n  animation: pulse 1s;\n  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);\n}\n@keyframes pulse {\n  0% {\n    box-shadow: 0 0 0 0 var(--style-color1);\n  }\n}\n.highlight8.offset {\n  box-shadow: 0.3em 0.3em 0 0 var(--style-color1), inset 0.3em 0.3em 0 0 var(--style-color1);\n}\n.highlight8.offset:hover, .highlight8.offset:focus {\n  box-shadow: 0 0 0 0 var(--style-color2), inset 6em 3.5em 0 0 var(--style-color2);\n  color: white;\n}\n\n/*\n * Highlight 9\n */\n.highlight9 {\n  --style-color1: #58afd1;\n  --style-color2: #256a85;\n  text-decoration: none;\n  box-shadow: inset 0 0 0 4px var(--style-color1);\n  color: var(--style-color1);\n  transition: color 0.25s 0.0833333333s;\n  position: relative;\n  background: none;\n  border: none;\n  font-weight: bold;\n  font-family: \"Roboto Slab\", sans-serif;\n  padding: 1.1em 2em;\n}\n.highlight9::before, .highlight9::after {\n  border: 0 solid transparent;\n  box-sizing: border-box;\n  content: \"\";\n  pointer-events: none;\n  position: absolute;\n  width: 0;\n  height: 0;\n  bottom: 0;\n  right: 0;\n}\n.highlight9::before {\n  border-bottom-width: 4px;\n  border-left-width: 4px;\n}\n.highlight9::after {\n  border-top-width: 4px;\n  border-right-width: 4px;\n}\n.highlight9:hover {\n  color: var(--style-color2);\n}\n.highlight9:hover::before, .highlight9:hover::after {\n  border-color: var(--style-color2);\n  transition: border-color 0s, width 0.25s, height 0.25s;\n  width: 100%;\n  height: 100%;\n}\n.highlight9:hover::before {\n  transition-delay: 0s, 0s, 0.25s;\n}\n.highlight9:hover::after {\n  transition-delay: 0s, 0.25s, 0s;\n}\n.highlight9:focus {\n  outline: 2px dotted var(--style-color1);\n}\n\n/*\n * highlight10\n */\n.highlight10 {\n  --style-color1: #41403e;\n  font-family: \"Patrick Hand SC\", cursive;\n  background: transparent;\n  padding: 0.75em 2em;\n  transition: all 0.5s ease;\n  color: var(--style-color1);\n  letter-spacing: 1px;\n  outline: none;\n  box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);\n  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;\n}\n.highlight10:hover {\n  box-shadow: 2px 8px 4px -6px rgba(0, 0, 0, 0.5);\n}\n.highlight10.lined.thick {\n  border: solid 5px var(--style-color1);\n}\n.highlight10.dotted.thick {\n  border: dotted 5px var(--style-color1);\n}\n.highlight10.dashed.thick {\n  border: dashed 5px var(--style-color1);\n}\n.highlight10.lined.thin {\n  border: solid 2px var(--style-color1);\n}\n.highlight10.dotted.thin {\n  border: dotted 2px var(--style-color1);\n}\n.highlight10.dashed.thin {\n  border: dashed 2px var(--style-color1);\n}\n\n/*\n *  Highlight x1\n */\n.btn-wrapper {\n  width: 290px;\n  height: 110px;\n}\n.btn-wrapper:hover .btn-inner {\n  top: -4px;\n  transform: scale(1, 1);\n  cursor: pointer;\n}\n.btn-wrapper__container {\n  border-bottom: 2px solid #15b5e2;\n  position: absolute;\n  width: 100%;\n  height: 80px;\n}\n.btn-wrapper__container:before, .btn-wrapper__container:after {\n  border-bottom: 2px solid #15b5e2;\n  width: 96%;\n  left: 2%;\n  bottom: -8px;\n  content: \"\";\n  position: absolute;\n}\n.btn-wrapper__container:after {\n  width: 92%;\n  left: 4%;\n  bottom: -14px;\n}\n.btn-wrapper__container .btn-inner {\n  width: 104.2%;\n  height: 100%;\n  position: absolute;\n  top: 20px;\n  left: -2.1%;\n  border: 2px solid #15b5e2;\n  box-sizing: border-box;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-family: \"Source Code Pro\", monospace;\n  letter-spacing: 1px;\n  text-transform: uppercase;\n  background: #10131c;\n  transform: scale(0.96, 0.96);\n  transition: all 0.3s;\n  z-index: 4;\n}\n.btn-wrapper__container .btn-inner .highlightx1 {\n  text-decoration: none;\n  color: #15b5e2;\n}\n\n/*\n * TwoPartsLinks_highlight1\n */\n.TwoPartsLinks_highlight1 {\n  --style-color1: #077036;\n  --style-color2: #626262;\n  --style-color3: #626262;\n  padding: 10px;\n}\n.TwoPartsLinks_highlight1:hover .TwoPartsLinks_highlight1_first-word, .TwoPartsLinks_highlight1:focus .TwoPartsLinks_highlight1_first-word {\n  transform: translate3d(0, -105%, 0);\n}\n.TwoPartsLinks_highlight1:hover .TwoPartsLinks_highlight1_second-word, .TwoPartsLinks_highlight1:focus .TwoPartsLinks_highlight1_second-word {\n  transform: translate3d(0, 105%, 0);\n}\n\n.TwoPartsLinks_highlight1_title {\n  display: inline-block;\n  overflow: hidden;\n}\n\n.TwoPartsLinks_highlight1_first-word,\n.TwoPartsLinks_highlight1_second-word {\n  display: inline-block;\n  position: relative;\n  transition: transform 0.3s;\n}\n.TwoPartsLinks_highlight1_first-word::before,\n.TwoPartsLinks_highlight1_second-word::before {\n  position: absolute;\n  content: attr(data-hover);\n}\n\n.TwoPartsLinks_highlight1_first-word {\n  color: var(--style-color1);\n}\n.TwoPartsLinks_highlight1_first-word::before {\n  top: 105%;\n  color: var(--style-color2);\n}\n\n.TwoPartsLinks_highlight1_second-word {\n  color: var(--style-color2);\n}\n.TwoPartsLinks_highlight1_second-word::before {\n  bottom: 105%;\n  color: var(--style-color1);\n}\n\n/*\n * TwoPartsLinks_highlight2\n */\n.TwoPartsLinks_highlight2 {\n  position: relative;\n  display: inline-block;\n  width: 164px;\n  height: 36px;\n  perspective: 300px;\n  margin: 8px;\n}\n.TwoPartsLinks_highlight2 .social-cube {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  transform-style: preserve-3d;\n  transition: all 0.333s;\n  transform: translateZ(-18px);\n}\n.TwoPartsLinks_highlight2 .social-cube .front,\n.TwoPartsLinks_highlight2 .social-cube .bottom {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  color: #fff;\n  transition: background 0.333s;\n}\n.TwoPartsLinks_highlight2 .social-cube .front {\n  transform: rotateX(0deg) translateZ(18px);\n}\n.TwoPartsLinks_highlight2 .social-cube .bottom {\n  transform: rotateX(-90deg) translateZ(18px);\n}\n.TwoPartsLinks_highlight2:hover .social-cube {\n  transform: translateZ(-18px) rotateX(90deg);\n}\n\n.TwoPartsLinks_highlight2.twitter {\n  font-family: \"Dosis\";\n}\n.TwoPartsLinks_highlight2.twitter .social-cube .front,\n.TwoPartsLinks_highlight2.twitter .social-cube .back {\n  background: #4099ff;\n}\n.TwoPartsLinks_highlight2.twitter .social-cube .bottom {\n  background: #0d7eff;\n}\n.TwoPartsLinks_highlight2.twitter:hover .social-cube .bottom {\n  background: #4099ff;\n}\n.TwoPartsLinks_highlight2.twitter:hover .social-cube .front {\n  background: #73b4ff;\n}\n.TwoPartsLinks_highlight2.facebook {\n  font-family: \"Dosis\";\n}\n.TwoPartsLinks_highlight2.facebook .social-cube .front,\n.TwoPartsLinks_highlight2.facebook .social-cube .back {\n  background: #3b5998;\n}\n.TwoPartsLinks_highlight2.facebook .social-cube .bottom {\n  background: #2d4373;\n}\n.TwoPartsLinks_highlight2.facebook:hover .social-cube .bottom {\n  background: #3b5998;\n}\n.TwoPartsLinks_highlight2.facebook:hover .social-cube .front {\n  background: #4c70ba;\n}\n.TwoPartsLinks_highlight2.youtube {\n  font-family: \"Dosis\";\n}\n.TwoPartsLinks_highlight2.youtube .social-cube .front,\n.TwoPartsLinks_highlight2.youtube .social-cube .back {\n  background: #cc181e;\n}\n.TwoPartsLinks_highlight2.youtube .social-cube .bottom {\n  background: #9e1317;\n}\n.TwoPartsLinks_highlight2.youtube:hover .social-cube .bottom {\n  background: #cc181e;\n}\n.TwoPartsLinks_highlight2.youtube:hover .social-cube .front {\n  background: #e73036;\n}\n.TwoPartsLinks_highlight2.github {\n  font-family: \"Dosis\";\n}\n.TwoPartsLinks_highlight2.github .social-cube .front,\n.TwoPartsLinks_highlight2.github .social-cube .back {\n  background: #767676;\n}\n.TwoPartsLinks_highlight2.github .social-cube .bottom {\n  background: #5d5d5d;\n}\n.TwoPartsLinks_highlight2.github:hover .social-cube .bottom {\n  background: #767676;\n}\n.TwoPartsLinks_highlight2.github:hover .social-cube .front {\n  background: #909090;\n}\n.TwoPartsLinks_highlight2.dribbble {\n  font-family: \"Dosis\";\n}\n.TwoPartsLinks_highlight2.dribbble .social-cube .front,\n.TwoPartsLinks_highlight2.dribbble .social-cube .back {\n  background: #ea4c89;\n}\n.TwoPartsLinks_highlight2.dribbble .social-cube .bottom {\n  background: #e51e6b;\n}\n.TwoPartsLinks_highlight2.dribbble:hover .social-cube .bottom {\n  background: #ea4c89;\n}\n.TwoPartsLinks_highlight2.dribbble:hover .social-cube .front {\n  background: #ef7aa7;\n}\n.TwoPartsLinks_highlight2.codepen {\n  font-family: \"Dosis\";\n}\n.TwoPartsLinks_highlight2.codepen .social-cube .front,\n.TwoPartsLinks_highlight2.codepen .social-cube .back {\n  background: #191919;\n}\n.TwoPartsLinks_highlight2.codepen .social-cube .bottom {\n  background: black;\n}\n.TwoPartsLinks_highlight2.codepen:hover .social-cube .bottom {\n  background: #191919;\n}\n.TwoPartsLinks_highlight2.codepen:hover .social-cube .front {\n  background: #333333;\n}\n", ""]);
+exports.push([module.i, "/*\n *  Highlight 1\n */\n.highlight1 {\n  font-weight: bold;\n  padding: 10px 5px 2px 5px;\n  display: inline-block;\n  color: #343434;\n  transition: color 250ms, text-shadow 250ms;\n  text-decoration: none !important;\n  background: none;\n  position: relative;\n  z-index: 0; }\n  .highlight1::after {\n    position: absolute;\n    z-index: -1;\n    bottom: -5px;\n    left: 50%;\n    transform: translateX(-50%);\n    content: \"\";\n    width: 100%;\n    height: 3px;\n    background-color: #343434;\n    transition: all 250ms; }\n  .highlight1:hover {\n    color: white; }\n    .highlight1:hover::after {\n      height: 105%;\n      width: 105%; }\n\n/*\n *  Highlight 2\n */\n.highlight2 {\n  --style-color1: #6225e6;\n  --style-color2: #fbc638;\n  --style-color3: black;\n  padding: 10px 45px;\n  text-decoration: none;\n  font-family: \"Poppins\", sans-serif;\n  color: white;\n  background: var(--style-color1);\n  transition: 1s;\n  box-shadow: 6px 6px 0 var(--style-color2);\n  transform: skewX(-15deg); }\n  .highlight2:focus {\n    outline: none; }\n  .highlight2:hover {\n    transition: 0.5s;\n    padding: 14px 47px;\n    box-shadow: 10px 10px 0px var(--style-color3); }\n\n/*\n *  Highlight 3\n */\n.highlight3 {\n  --style-color1: #ff0072;\n  font-family: \"Source Sans Pro\", sans-serif;\n  color: var(--style-color1);\n  text-decoration: none;\n  -webkit-transition: 0.3s all ease;\n  transition: 0.3s ease all;\n  text-transform: uppercase;\n  display: inline-block;\n  text-align: center;\n  font-weight: bold;\n  padding: 0.75em 2em;\n  border: 3px solid var(--style-color1);\n  border-radius: 4px;\n  position: relative;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);\n  z-index: 2; }\n  .highlight3:hover {\n    color: #fff; }\n  .highlight3:focus {\n    color: #fff; }\n  .highlight3:before {\n    -webkit-transition: 0.5s all ease;\n    transition: 0.5s all ease;\n    position: absolute;\n    top: 0;\n    left: 50%;\n    right: 50%;\n    bottom: 0;\n    opacity: 0;\n    content: \"\";\n    background-color: var(--style-color1);\n    z-index: -1; }\n  .highlight3:hover:before {\n    -webkit-transition: 0.5s all ease;\n    transition: 0.5s all ease;\n    left: 0;\n    right: 0;\n    opacity: 1; }\n  .highlight3:focus:before {\n    -webkit-transition: 0.5s all ease;\n    transition: 0.5s all ease;\n    left: 0;\n    right: 0;\n    opacity: 1; }\n\n/*\n *  Highlight 4\n */\n@keyframes sheen {\n  0% {\n    transform: skewY(-45deg) translateX(0); }\n  100% {\n    transform: skewY(-45deg) translateX(12.5em); } }\n\n.highlight4 {\n  --style-color1: rgb(25, 119, 181);\n  filter: brightness(90%);\n  padding: 0.75em 2em;\n  text-align: center;\n  text-decoration: none;\n  color: var(--style-color1);\n  border: 2px solid var(--style-color1);\n  display: inline-block;\n  border-radius: 0.3em;\n  transition: all 0.2s ease-in-out;\n  position: relative;\n  overflow: hidden; }\n  .highlight4:before {\n    content: \"\";\n    background-color: rgba(255, 255, 255, 0.5);\n    height: 100%;\n    width: 3em;\n    display: block;\n    position: absolute;\n    top: 0;\n    left: -4.5em;\n    transform: skewX(-45deg) translateX(0);\n    transition: none; }\n  .highlight4:hover {\n    background-color: var(--style-color1);\n    color: #fff;\n    border-bottom: 4px solid var(--style-color1); }\n    .highlight4:hover:before {\n      transform: skewX(-45deg) translateX(13.5em);\n      transition: all 0.5s ease-in-out; }\n\n/*\n *  Highlight 5\n */\n.highlight5 {\n  --style-color1: #5e5e5e;\n  --style-color2: rgba(255, 0, 0, 0.3);\n  font-family: \"Open Sans Condensed\", sans-serif;\n  padding: 0.75em 2em;\n  text-align: center;\n  /* \n  ========================\n        BUTTON ONE\n  ========================\n  */\n  /* \n  ========================\n        BUTTON TWO\n  ========================\n  */\n  color: rgba(255, 255, 255, 0.5);\n  background-color: var(--style-color1);\n  transition: all 0.5s;\n  position: relative;\n  z-index: 2;\n  /* \n  ========================\n        BUTTON THREE\n  ========================\n  */ }\n  .highlight5.btn-one {\n    background-color: var(--style-color1);\n    color: #fff;\n    transition: all 0.3s;\n    position: relative; }\n    .highlight5.btn-one::before {\n      content: \"\";\n      position: absolute;\n      bottom: 0;\n      left: 0;\n      width: 100%;\n      height: 100%;\n      z-index: 1;\n      opacity: 0;\n      transition: all 0.3s;\n      border-top-width: 1px;\n      border-bottom-width: 1px;\n      border-top-style: solid;\n      border-bottom-style: solid;\n      border-top-color: rgba(255, 0, 0, 0.3);\n      border-bottom-color: rgba(255, 0, 0, 0.3);\n      transform: scale(0.1, 1); }\n    .highlight5.btn-one:hover::before {\n      opacity: 1;\n      transform: scale(1, 1); }\n    .highlight5.btn-one::after {\n      content: \"\";\n      position: absolute;\n      bottom: 0;\n      left: 0;\n      z-index: 1;\n      transition: all 0.3s;\n      background-color: rgba(255, 255, 255, 0.1); }\n    .highlight5.btn-one:hover::after {\n      opacity: 0;\n      transform: scale(0.1, 1); }\n  .highlight5::before {\n    content: \"\";\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    z-index: 1;\n    transition: all 0.5s;\n    border: 1px solid var(--style-color2);\n    background-color: rgba(255, 255, 255, 0.1); }\n  .highlight5::after {\n    content: \"\";\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    z-index: 1;\n    transition: all 0.5s;\n    border: 1px solid var(--style-color2);\n    background-color: rgba(255, 255, 255, 0.1); }\n  .highlight5:hover::before {\n    transform: rotate(-45deg);\n    background-color: rgba(255, 255, 255, 0); }\n  .highlight5:hover::after {\n    transform: rotate(45deg);\n    background-color: rgba(255, 255, 255, 0); }\n  .highlight5.btn-three {\n    color: #fff;\n    background-color: #818181;\n    transition: all 0.5s;\n    position: relative; }\n    .highlight5.btn-three::before {\n      content: \"\";\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 100%;\n      height: 100%;\n      z-index: 1;\n      background-color: rgba(255, 255, 255, 0.1);\n      transition: all 0.3s; }\n    .highlight5.btn-three:hover::before {\n      opacity: 0;\n      transform: scale(0.5, 0.5); }\n    .highlight5.btn-three::after {\n      content: \"\";\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 100%;\n      height: 100%;\n      z-index: 1;\n      opacity: 0;\n      transition: all 0.3s;\n      border: 1px solid rgba(255, 0, 0, 0.3);\n      transform: scale(1.2, 1.2); }\n    .highlight5.btn-three:hover::after {\n      opacity: 1;\n      transform: scale(1, 1); }\n\n/*\n *  Highlight 6\n */\n.highlight6 {\n  --style-color1: #343434;\n  color: #343434;\n  text-decoration: none;\n  position: relative;\n  padding: 0 0.2em 0.6em 0.2em; }\n  .highlight6.left::after {\n    transform: translateX(-100%) scaleX(0);\n    background-color: var(--style-color1); }\n  .highlight6.center::after {\n    transform: translateX(-50%) scaleX(0);\n    background-color: var(--style-color1); }\n  .highlight6::after {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    bottom: 5px;\n    width: 100%;\n    height: 3px;\n    transform: translateX(-100%) scaleX(0);\n    background-color: var(--style-color1);\n    transition: transform 250ms; }\n  .highlight6:hover::after {\n    transform: translateX(-50%) scaleX(1); }\n  .social-media-list .highlight6:hover {\n    text-decoration: none; }\n\n/*\n *  Highlight 7\n */\n.highlight7 {\n  --style-color1: #0b7;\n  --style-color2: black;\n  padding: 0.75em 2em;\n  font-family: sans-serif;\n  text-decoration: none;\n  position: relative;\n  vertical-align: middle;\n  color: #0b7;\n  display: inline-block;\n  text-align: center;\n  transition: 0.5s;\n  cursor: pointer;\n  border: 2px solid var(--style-color1);\n  -webkit-transition: 0.5s; }\n  .highlight7.corners::before {\n    border-bottom: 3px solid var(--style-color2);\n    border-left: 3px solid var(--style-color2);\n    -webkit-transform-origin: 0 100%; }\n  .highlight7.corners::after {\n    border-top: 3px solid var(--style-color2);\n    border-right: 3px solid var(--style-color2);\n    -webkit-transform-origin: 100% 0%; }\n  .highlight7.cross-corners::before {\n    border-bottom: 3px solid var(--style-color2);\n    border-left: 3px solid var(--style-color2);\n    -webkit-transform-origin: 100% 0%; }\n  .highlight7.cross-corners::after {\n    border-top: 3px solid var(--style-color2);\n    border-right: 3px solid var(--style-color2);\n    -webkit-transform-origin: 0% 100%; }\n  .highlight7.underline::before {\n    border-bottom: 3px solid var(--style-color2);\n    border-left: 0;\n    -webkit-transform-origin: 0% 100%; }\n  .highlight7.underline::after {\n    border-top: 0;\n    border-right: 0;\n    -webkit-transform-origin: 50% 50%; }\n  .highlight7:hover {\n    border: 2px solid rgba(0, 160, 80, 0);\n    color: black; }\n  .highlight7::before, .highlight7::after {\n    width: 100%;\n    height: 100%;\n    z-index: 3;\n    content: \"\";\n    position: absolute;\n    top: 0;\n    left: 0;\n    box-sizing: border-box;\n    -webkit-transform: scale(0);\n    transition: 0.5s; }\n  .highlight7:hover::after, .highlight7:hover::before {\n    -webkit-transform: scale(1); }\n\n/*\n *  Highlight 8\n */\n.pulse {\n  --color: #19bc8b;\n  --hover: #1973bc; }\n\n.raise {\n  --color: #19bc8b;\n  --hover: #1973bc; }\n\n.offset {\n  --color: #19bc8b;\n  --hover: #1973bc; }\n\n.highlight8 {\n  --style-color1: #19bc8b;\n  --style-color2: #1937bc;\n  color: var(--color);\n  transition: 0.25s;\n  text-decoration: none;\n  background: none;\n  border: 2px solid;\n  font: inherit;\n  line-height: 1;\n  margin: 0.5em;\n  padding: 0.75em 2em;\n  border-color: var(--style-color1); }\n  .highlight8:hover, .highlight8:focus {\n    border-color: var(--style-color2);\n    color: var(--style-color2); }\n  .highlight8.raise:hover, .highlight8.raise:focus {\n    box-shadow: 0 0.5em 0.5em -0.4em var(--style-color2);\n    transform: translateY(-0.25em); }\n  .highlight8.pulse:hover, .highlight8.pulse:focus {\n    animation: pulse 1s;\n    box-shadow: 0 0 0 2em rgba(255, 255, 255, 0); }\n\n@keyframes pulse {\n  0% {\n    box-shadow: 0 0 0 0 var(--style-color1); } }\n  .highlight8.offset {\n    box-shadow: 0.3em 0.3em 0 0 var(--style-color1), inset 0.3em 0.3em 0 0 var(--style-color1); }\n    .highlight8.offset:hover, .highlight8.offset:focus {\n      box-shadow: 0 0 0 0 var(--style-color2), inset 6em 3.5em 0 0 var(--style-color2);\n      color: white; }\n\n/*\n * Highlight 9\n */\n.highlight9 {\n  --style-color1: #58afd1;\n  --style-color2: #256a85;\n  text-decoration: none;\n  box-shadow: inset 0 0 0 4px var(--style-color1);\n  color: var(--style-color1);\n  transition: color 0.25s 0.08333s;\n  position: relative;\n  background: none;\n  border: none;\n  font-weight: bold;\n  font-family: \"Roboto Slab\", sans-serif;\n  padding: 1.1em 2em; }\n  .highlight9::before, .highlight9::after {\n    border: 0 solid transparent;\n    box-sizing: border-box;\n    content: \"\";\n    pointer-events: none;\n    position: absolute;\n    width: 0;\n    height: 0;\n    bottom: 0;\n    right: 0; }\n  .highlight9::before {\n    border-bottom-width: 4px;\n    border-left-width: 4px; }\n  .highlight9::after {\n    border-top-width: 4px;\n    border-right-width: 4px; }\n  .highlight9:hover {\n    color: var(--style-color2); }\n    .highlight9:hover::before, .highlight9:hover::after {\n      border-color: var(--style-color2);\n      transition: border-color 0s, width 0.25s, height 0.25s;\n      width: 100%;\n      height: 100%; }\n    .highlight9:hover::before {\n      transition-delay: 0s, 0s, 0.25s; }\n    .highlight9:hover::after {\n      transition-delay: 0s, 0.25s, 0s; }\n  .highlight9:focus {\n    outline: 2px dotted var(--style-color1); }\n\n/*\n * highlight10\n */\n.highlight10 {\n  --style-color1: #41403e;\n  font-family: \"Patrick Hand SC\", cursive;\n  background: transparent;\n  padding: 0.75em 2em;\n  transition: all 0.5s ease;\n  color: var(--style-color1);\n  letter-spacing: 1px;\n  outline: none;\n  box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);\n  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; }\n  .highlight10:hover {\n    box-shadow: 2px 8px 4px -6px rgba(0, 0, 0, 0.5); }\n  .highlight10.lined.thick {\n    border: solid 5px var(--style-color1); }\n  .highlight10.dotted.thick {\n    border: dotted 5px var(--style-color1); }\n  .highlight10.dashed.thick {\n    border: dashed 5px var(--style-color1); }\n  .highlight10.lined.thin {\n    border: solid 2px var(--style-color1); }\n  .highlight10.dotted.thin {\n    border: dotted 2px var(--style-color1); }\n  .highlight10.dashed.thin {\n    border: dashed 2px var(--style-color1); }\n\n/*\n *  Highlight 11 iteraction push\n */\n.highlight11 {\n  --style-color1: #58afd1; }\n  .highlight11, .highlight11:link, .highlight11:visited {\n    font-family: 'Lato', sans-serif;\n    text-transform: uppercase;\n    text-decoration: nonde;\n    padding: 15px 40px;\n    display: inline-block;\n    border-radius: 100px;\n    transition: all .2s;\n    position: relative;\n    font-size: 16px; }\n  .highlight11:hover {\n    transform: translateY(-3px);\n    box-shadow: 0 10px 20px rgba(34, 34, 34, 0.2); }\n    .highlight11:hover::after {\n      transform: scaleX(1.4) scaleY(1.6);\n      opacity: 0; }\n  .highlight11:active, .highlight11:focus {\n    outline: none;\n    transform: translateY(-1px);\n    box-shadow: 0 10px 10px rgba(34, 34, 34, 0.2); }\n  .highlight11--blue {\n    background-color: #58afd1;\n    color: #fff; }\n    .highlight11--blue::after {\n      background-color: #58afd1; }\n  .highlight11::after {\n    content: \"\";\n    display: inline-block;\n    height: 100%;\n    width: 100%;\n    border-radius: 100px;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: -1;\n    transition: all .4s; }\n\n/*\n * highlight12\n */\n.highlight12 {\n  display: inline-block;\n  padding: 0.75em 2em;\n  cursor: pointer;\n  position: relative;\n  overflow: hidden;\n  text-decoration: none;\n  color: #2b2d42; }\n  .highlight12::before, .highlight12::after {\n    content: \"\";\n    position: absolute;\n    z-index: 2;\n    width: 100%;\n    height: 2px;\n    left: 0;\n    transform: translateX(-100%);\n    background-color: #2b2d42;\n    transition: 0.5s; }\n  .highlight12::before {\n    top: 0; }\n  .highlight12:after {\n    bottom: 0; }\n  .highlight12:hover::after, .highlight12:hover::before {\n    transform: translateX(100%); }\n\n/*\n *  Highlight x1\n */\n.btn-wrapper {\n  width: 290px;\n  height: 110px; }\n  .btn-wrapper:hover .btn-inner {\n    top: -4px;\n    transform: scale(1, 1);\n    cursor: pointer; }\n  .btn-wrapper__container {\n    border-bottom: 2px solid #15b5e2;\n    position: absolute;\n    width: 100%;\n    height: 80px; }\n    .btn-wrapper__container:before, .btn-wrapper__container:after {\n      border-bottom: 2px solid #15b5e2;\n      width: 96%;\n      left: 2%;\n      bottom: -8px;\n      content: \"\";\n      position: absolute; }\n    .btn-wrapper__container:after {\n      width: 92%;\n      left: 4%;\n      bottom: -14px; }\n    .btn-wrapper__container .btn-inner {\n      width: 104.2%;\n      height: 100%;\n      position: absolute;\n      top: 20px;\n      left: -2.1%;\n      border: 2px solid #15b5e2;\n      box-sizing: border-box;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      font-family: \"Source Code Pro\", monospace;\n      letter-spacing: 1px;\n      text-transform: uppercase;\n      background: #10131c;\n      transform: scale(0.96, 0.96);\n      transition: all 0.3s;\n      z-index: 4; }\n      .btn-wrapper__container .btn-inner .highlightx1 {\n        text-decoration: none;\n        color: #15b5e2; }\n\n/*\n * TwoPartsLinks_highlight1\n */\n.TwoPartsLinks_highlight1 {\n  --style-color1: #077036;\n  --style-color2: #626262;\n  --style-color3: #626262;\n  padding: 10px; }\n  .TwoPartsLinks_highlight1:hover .TwoPartsLinks_highlight1_first-word, .TwoPartsLinks_highlight1:focus .TwoPartsLinks_highlight1_first-word {\n    transform: translate3d(0, -105%, 0); }\n  .TwoPartsLinks_highlight1:hover .TwoPartsLinks_highlight1_second-word, .TwoPartsLinks_highlight1:focus .TwoPartsLinks_highlight1_second-word {\n    transform: translate3d(0, 105%, 0); }\n\n.TwoPartsLinks_highlight1_title {\n  display: inline-block;\n  overflow: hidden; }\n\n.TwoPartsLinks_highlight1_first-word,\n.TwoPartsLinks_highlight1_second-word {\n  display: inline-block;\n  position: relative;\n  transition: transform 0.3s; }\n  .TwoPartsLinks_highlight1_first-word::before,\n  .TwoPartsLinks_highlight1_second-word::before {\n    position: absolute;\n    content: attr(data-hover); }\n\n.TwoPartsLinks_highlight1_first-word {\n  color: var(--style-color1); }\n  .TwoPartsLinks_highlight1_first-word::before {\n    top: 105%;\n    color: var(--style-color2); }\n\n.TwoPartsLinks_highlight1_second-word {\n  color: var(--style-color2); }\n  .TwoPartsLinks_highlight1_second-word::before {\n    bottom: 105%;\n    color: var(--style-color1); }\n\n/*\n * TwoPartsLinks_highlight2\n */\n.TwoPartsLinks_highlight2 {\n  position: relative;\n  display: inline-block;\n  width: 164px;\n  height: 36px;\n  perspective: 300px;\n  margin: 8px; }\n  .TwoPartsLinks_highlight2 .social-cube {\n    position: absolute;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%;\n    transform-style: preserve-3d;\n    transition: all 0.333s;\n    transform: translateZ(-18px); }\n    .TwoPartsLinks_highlight2 .social-cube .front,\n    .TwoPartsLinks_highlight2 .social-cube .bottom {\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 100%;\n      height: 100%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      color: #fff;\n      transition: background 0.333s; }\n    .TwoPartsLinks_highlight2 .social-cube .front {\n      transform: rotateX(0deg) translateZ(18px); }\n    .TwoPartsLinks_highlight2 .social-cube .bottom {\n      transform: rotateX(-90deg) translateZ(18px); }\n  .TwoPartsLinks_highlight2:hover .social-cube {\n    transform: translateZ(-18px) rotateX(90deg); }\n\n.TwoPartsLinks_highlight2.twitter {\n  font-family: \"Dosis\"; }\n  .TwoPartsLinks_highlight2.twitter .social-cube .front,\n  .TwoPartsLinks_highlight2.twitter .social-cube .back {\n    background: #4099ff; }\n  .TwoPartsLinks_highlight2.twitter .social-cube .bottom {\n    background: #0d7eff; }\n  .TwoPartsLinks_highlight2.twitter:hover .social-cube .bottom {\n    background: #4099ff; }\n  .TwoPartsLinks_highlight2.twitter:hover .social-cube .front {\n    background: #73b4ff; }\n\n.TwoPartsLinks_highlight2.facebook {\n  font-family: \"Dosis\"; }\n  .TwoPartsLinks_highlight2.facebook .social-cube .front,\n  .TwoPartsLinks_highlight2.facebook .social-cube .back {\n    background: #3b5998; }\n  .TwoPartsLinks_highlight2.facebook .social-cube .bottom {\n    background: #2d4373; }\n  .TwoPartsLinks_highlight2.facebook:hover .social-cube .bottom {\n    background: #3b5998; }\n  .TwoPartsLinks_highlight2.facebook:hover .social-cube .front {\n    background: #4c70ba; }\n\n.TwoPartsLinks_highlight2.youtube {\n  font-family: \"Dosis\"; }\n  .TwoPartsLinks_highlight2.youtube .social-cube .front,\n  .TwoPartsLinks_highlight2.youtube .social-cube .back {\n    background: #cc181e; }\n  .TwoPartsLinks_highlight2.youtube .social-cube .bottom {\n    background: #9e1317; }\n  .TwoPartsLinks_highlight2.youtube:hover .social-cube .bottom {\n    background: #cc181e; }\n  .TwoPartsLinks_highlight2.youtube:hover .social-cube .front {\n    background: #e73036; }\n\n.TwoPartsLinks_highlight2.github {\n  font-family: \"Dosis\"; }\n  .TwoPartsLinks_highlight2.github .social-cube .front,\n  .TwoPartsLinks_highlight2.github .social-cube .back {\n    background: #767676; }\n  .TwoPartsLinks_highlight2.github .social-cube .bottom {\n    background: #5d5d5d; }\n  .TwoPartsLinks_highlight2.github:hover .social-cube .bottom {\n    background: #767676; }\n  .TwoPartsLinks_highlight2.github:hover .social-cube .front {\n    background: #909090; }\n\n.TwoPartsLinks_highlight2.dribbble {\n  font-family: \"Dosis\"; }\n  .TwoPartsLinks_highlight2.dribbble .social-cube .front,\n  .TwoPartsLinks_highlight2.dribbble .social-cube .back {\n    background: #ea4c89; }\n  .TwoPartsLinks_highlight2.dribbble .social-cube .bottom {\n    background: #e51e6b; }\n  .TwoPartsLinks_highlight2.dribbble:hover .social-cube .bottom {\n    background: #ea4c89; }\n  .TwoPartsLinks_highlight2.dribbble:hover .social-cube .front {\n    background: #ef7aa7; }\n\n.TwoPartsLinks_highlight2.codepen {\n  font-family: \"Dosis\"; }\n  .TwoPartsLinks_highlight2.codepen .social-cube .front,\n  .TwoPartsLinks_highlight2.codepen .social-cube .back {\n    background: #191919; }\n  .TwoPartsLinks_highlight2.codepen .social-cube .bottom {\n    background: black; }\n  .TwoPartsLinks_highlight2.codepen:hover .social-cube .bottom {\n    background: #191919; }\n  .TwoPartsLinks_highlight2.codepen:hover .social-cube .front {\n    background: #333333; }\n\n/*\n *  Rotate_text\n */\n.Rotate_text {\n  min-width: 60px;\n  max-width: 120px;\n  min-height: 60px;\n  max-height: 120px;\n  text-decoration: none;\n  display: inline-block;\n  outline: none;\n  cursor: pointer;\n  border: 2px solid #f5f5f5;\n  color: white;\n  background-color: #a00116;\n  border-radius: 100%;\n  overflow: none;\n  text-align: center;\n  padding: 0px;\n  box-shadow: 0 0 3px #a00116;\n  font-size: 12px;\n  font-weight: bold;\n  transition: 1.0s ease all;\n  -moz-transition: 1.0s ease all;\n  -webkit-transition: 1.0s ease all; }\n  .Rotate_text:before {\n    content: '';\n    display: inline-block;\n    vertical-align: middle;\n    padding-top: 100%; }\n  .Rotate_text:hover {\n    transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -webkit-transform: rotate(360deg);\n    transform-origin: center;\n    -moz-transform-origin: center;\n    -webkit-transform-origin: center; }\n\n.Rotate_text_Span {\n  display: inline-block;\n  vertical-align: middle;\n  max-width: 90%;\n  color: white; }\n\n/*\n *  Button_Flip\n */\n.Button_flip_container {\n  align-items: center;\n  justify-content: center; }\n  .Button_flip_container .Button_flip {\n    transition: 0.8s cubic-bezier(0.775, 0.07, 0.575, 0.995);\n    transform-style: preserve-3d;\n    position: absolute; }\n    .Button_flip_container .Button_flip:hover {\n      transform: rotateX(180deg); }\n  .Button_flip_container .Flip_front_button {\n    cursor: pointer;\n    width: 200px;\n    height: 60px;\n    background-color: #ff0066;\n    border: none;\n    font-size: 2em;\n    color: #fff;\n    backface-visibility: hidden;\n    z-index: 2;\n    transform: rotateX(0deg);\n    position: absolute;\n    box-shadow: 0px 8px 12px #ccc; }\n  .Button_flip_container .Flip_back_button {\n    cursor: pointer;\n    width: 200px;\n    height: 60px;\n    background-color: #cc0066;\n    border: none;\n    font-size: 2em;\n    color: #fff;\n    backface-visibility: hidden;\n    transform: rotateX(-180deg);\n    position: relative;\n    box-shadow: 0px 8px 12px #ccc; }\n", ""]);
 
 // exports
 
 
 /***/ }),
 /* 10 */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports) {
-
-// shim for using process in browser
-var process = module.exports = {};
-
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-
-var cachedSetTimeout;
-var cachedClearTimeout;
-
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-
-/***/ }),
-/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -2027,7 +1825,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(13);
+var	fixUrls = __webpack_require__(11);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -2362,7 +2160,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 13 */
+/* 11 */
 /***/ (function(module, exports) {
 
 
@@ -2457,7 +2255,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 14 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function (factory) {
@@ -2511,30 +2309,85 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 15 */
+/* 13 */
 /***/ (function(module, exports) {
 
-var g;
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
 
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
 
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
 }
 
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
 
-module.exports = g;
+	return '/*# ' + data + ' */';
+}
 
 
 /***/ })

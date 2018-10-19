@@ -1,6 +1,10 @@
 import React from "react";
-import "./index.css";
+import "./links.scss";
 import { css } from "emotion";
+
+if (typeof window == "undefined") {
+  window = new Object();
+}
 
 class AwesomeLinks extends React.Component {
   render() {
@@ -89,12 +93,13 @@ const customStyles = (linkstyle, styles) => {
       }
       break;
     }
-    case "highlight11": {
-      if (styles.color1) {
-        newStyles["--style-color1"] = styles.color1;
+    case "highlight11":
+      {
+        if (styles.color1) {
+          newStyles["--style-color1"] = styles.color1;
+        }
       }
-    }
-    break;
+      break;
   }
   if (linkstyle.includes("highlight6")) {
     if (styles.color1) {
@@ -159,23 +164,21 @@ export class RotateText extends React.Component {
   render() {
     return (
       <a class="Rotate_text" href={this.props.href}>
-        <span class="Rotate_text_Span">
-          {this.props.children}
-        </span>
+        <span class="Rotate_text_Span">{this.props.children}</span>
       </a>
-    )
+    );
   }
 }
 
 export class FlipButton extends React.Component {
   render() {
     return (
-     <div class="Button_flip_container">   
-          <a class="Button_flip"  href={this.props.href}>
-              <button class="Flip_front_button"> {this.props.children}</button>
-              <button class="Flip_back_button" > {this.props.children}</button>
-          </a>   
+      <div class="Button_flip_container">
+        <a class="Button_flip" href={this.props.href}>
+          <button class="Flip_front_button"> {this.props.children}</button>
+          <button class="Flip_back_button"> {this.props.children}</button>
+        </a>
       </div>
-      )
+    );
   }
 }

@@ -22,7 +22,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm link",
     "start": "webpack --watch",
-    "build": "sass ./src/links.scss ./src/index.css && webpack"
+    "build": "webpack"
   },
   "peerDependencies": {
     "react": "^15.5.4"
@@ -39,10 +39,12 @@
     "babel-preset-env": "^1.5.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
-    "node-sass": "^4.9.3",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "node-sass": "^4.9.4",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
     "sass": "^1.13.2",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
     "webpack": "^2.7.0"
   },

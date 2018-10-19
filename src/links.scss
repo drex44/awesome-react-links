@@ -43,7 +43,7 @@ $padding: 0.75em 2em;
  *  Highlight 2
  */
 
-@import url("https://fonts.googleapis.com/css?family=Poppins:900i");
+// @import url("https://fonts.googleapis.com/css?family=Poppins:900i");
 
 .highlight2 {
   --style-color1: #6225e6;
@@ -71,7 +71,7 @@ $padding: 0.75em 2em;
  *  Highlight 3
  */
 
-@import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:700";
+// @import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:700";
 
 $font: "Source Sans Pro", sans-serif;
 $primary: #ff0072;
@@ -188,7 +188,7 @@ $color: #2194e0;
  *  Highlight 5
  */
 
-@import "https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";
+// @import "https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";
 
 $highlight5-border-color: rgba(255, 0, 0, 0.3);
 
@@ -618,7 +618,7 @@ $colors: (
  * highlight10
  */
 
-@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+// @import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
 
 .highlight10 {
   --style-color1: #41403e;
@@ -658,7 +658,7 @@ $colors: (
  *  Highlight 11 iteraction push
  */
 
- @import url('https://fonts.googleapis.com/css?family=Lato');
+//  @import url('https://fonts.googleapis.com/css?family=Lato');
 
 //  variable
 $color-primary: #58afd1;
@@ -719,8 +719,6 @@ $color-white: #fff;
     z-index: -1;
     transition: all .4s;
   }
-  
-
 }
 
 
@@ -899,7 +897,7 @@ $color-border: black;
  * TwoPartsLinks_highlight2
  */
 
-@import url("https://fonts.googleapis.com/css?family=Dosis");
+// @import url("https://fonts.googleapis.com/css?family=Dosis");
 
 // Mixin for easier colors
 @mixin TwoPartsLinks_highlight2($color) {
