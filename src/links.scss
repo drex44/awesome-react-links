@@ -622,6 +622,13 @@ $colors: (
 
 .highlight10 {
   --style-color1: #41403e;
+  --style-black: #000000;
+  --style-yellow: #fdf3a7;
+  --style-blue: #bcf2fd;
+  --style-green: #c0fcab;
+  --style-pink: #f6c9c8;
+  --style-purple: #b9cafb;
+  --style-grey: #eeeeee;
   font-family: "Patrick Hand SC", cursive;
   background: transparent;
   padding: $padding;
@@ -651,6 +658,28 @@ $colors: (
   }
   &.dashed.thin {
     border: dashed 2px var(--style-color1);
+  }
+  &.style-sticky {
+    text-decoration: none;
+    color: var(--style-black);
+    &.yellow {
+      background: var(--style-yellow);
+    }
+    &.blue {
+     background: var(--style-blue);
+    }
+    &.green {
+     background: var(--style-green);
+    }
+    &.pink {
+     background: var(--style-pink);
+    }
+    &.purple {
+     background: var(--style-purple);
+    }
+    &.grey {
+     background: var(--style-grey);
+    }
   }
 }
 
