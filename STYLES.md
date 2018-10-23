@@ -22,4 +22,4 @@
 - highlight1
 - highlight2
 
-> check out the [demo](https://awesome-react-links.surge.sh) to know how to use all these!
+> check out the [demo](https://awesome-react-links.netlify.com) to know how to use all these!
