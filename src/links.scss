@@ -1122,10 +1122,12 @@ $flipbutton_background_color_2: #cc0066;
 }
 
 .bracketeer {
+  --style-color1: #41403e;
+  --style-color2: dodgerblue;
 
   font-size: 1em;
   font-weight: 100;
-	color: inherit;
+  color: var(--style-color1);
   text-decoration: none;
 
   &:before,
@@ -1134,6 +1136,7 @@ $flipbutton_background_color_2: #cc0066;
     opacity: 0;
 		transition: all 0.2s ease;
     position: relative;
+    color: var(--style-color2);
   }
 
   &:before {

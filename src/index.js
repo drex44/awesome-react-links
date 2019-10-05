@@ -100,6 +100,15 @@ const customStyles = (linkstyle, styles) => {
         }
       }
       break;
+    case "bracketeer": {
+      if (styles.color1) {
+        newStyles["--style-color1"] = styles.color1;
+      }
+      if (styles.color2) {
+        newStyles["--style-color2"] = styles.color2;
+      }
+      break;
+    };
   }
   if (linkstyle.includes("highlight6")) {
     if (styles.color1) {
