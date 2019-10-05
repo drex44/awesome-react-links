@@ -1120,3 +1120,47 @@ $flipbutton_background_color_2: #cc0066;
 		box-shadow: 0px 8px 12px #ccc;
 	}
 }
+
+.bracketeer {
+
+  font-size: 1em;
+  font-weight: 100;
+	color: inherit;
+  text-decoration: none;
+
+  &:before,
+  &:after {
+    font-size: 1.2em;
+    opacity: 0;
+		transition: all 0.2s ease;
+    position: relative;
+  }
+
+  &:before {
+    content: "[";
+    left: 8%;
+  }
+  
+  &:after {
+    content: "]";
+    right: 8%;
+  }
+
+  &:hover {
+
+    &:before,
+    &:after {
+      opacity: 1;
+    }
+
+    &:before {
+      content: "[";
+      left: 0;
+    }
+    
+    &:after {
+      content: "]";
+      right: 0;
+    }
+  }
+}
