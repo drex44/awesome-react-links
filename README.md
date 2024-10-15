@@ -4,7 +4,7 @@ A collection of animated links/ anchor tags. this can be used on any clickable e
 
 ### Demo
 
-- [awesome-react-links.netlify.com](https://awesome-react-links.netlify.com)
+- [https://awesome-react-links.netlify.com](https://awesome-react-links.vercel.app/)
 
 ### Installation
 
@@ -22,7 +22,7 @@ import AwesomeLinks from "awesome-react-links";
 </AwesomeLinks>;
 ```
 
-check out the [demo](https://awesome-react-links.netlify.com) for all styles and how to use them!
+check out the [demo](https://awesome-react-links.vercel.app/) for all styles and how to use them!
 
 ### All styles
 
